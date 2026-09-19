@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Bilvaya Hospitality — Thoughtfully crafted hotels, resorts, residences and student cafés."
+    content="Bilvaya Hospitality creates welcoming student residences, cafés, hotels and resort experiences."
   />
-  <title>Bilvaya Hospitality | Stay Beyond Ordinary</title>
+  <title>Bilvaya Hospitality | A Better Way to Belong</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -107,7 +107,6 @@
       line-height: 1.85;
     }
 
-    /* Decorative plant mark */
     .brand-mark {
       position: relative;
       width: 36px;
@@ -363,7 +362,7 @@
     }
 
     .hero-title {
-      max-width: 850px;
+      max-width: 900px;
       margin: 17px 0 26px;
       font-family: "Playfair Display", serif;
       font-size: clamp(3.4rem, 7.8vw, 7.6rem);
@@ -378,8 +377,8 @@
     }
 
     .hero-description {
-      max-width: 555px;
-      color: rgba(255, 255, 255, 0.76);
+      max-width: 585px;
+      color: rgba(255, 255, 255, 0.78);
       font-size: 1rem;
       line-height: 1.8;
     }
@@ -469,30 +468,29 @@
       content: "";
     }
 
-    /* Stats */
-    .stats {
+    /* Trust strip */
+    .trust-strip {
       position: relative;
-      z-index: 5;
-      margin-top: -1px;
+      z-index: 4;
       background: var(--sand);
     }
 
-    .stats-grid {
+    .trust-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
     }
 
-    .stat {
+    .trust-item {
       min-height: 170px;
       padding: 35px 28px;
       border-right: 1px solid rgba(23, 52, 47, 0.14);
     }
 
-    .stat:last-child {
+    .trust-item:last-child {
       border-right: none;
     }
 
-    .stat-number {
+    .trust-number {
       display: block;
       color: var(--forest);
       font-family: "Playfair Display", serif;
@@ -502,7 +500,7 @@
       line-height: 1;
     }
 
-    .stat-label {
+    .trust-label {
       display: block;
       margin-top: 11px;
       color: rgba(23, 52, 47, 0.65);
@@ -533,10 +531,10 @@
 
     .about-art::before {
       position: absolute;
-      width: 290px;
-      height: 430px;
       top: 60px;
       left: 25%;
+      width: 290px;
+      height: 430px;
       border-radius: 150px 150px 0 0;
       background: #244f43;
       content: "";
@@ -544,14 +542,29 @@
 
     .about-art::after {
       position: absolute;
-      width: 220px;
-      height: 220px;
       right: 20px;
       bottom: 32px;
+      width: 220px;
+      height: 220px;
       border-radius: 50%;
       background: var(--clay);
       box-shadow: -220px -275px 0 -70px #e3d9c4;
       content: "";
+    }
+
+    .art-window {
+      position: absolute;
+      z-index: 3;
+      top: 112px;
+      left: calc(25% + 45px);
+      width: 200px;
+      height: 140px;
+      border: 12px solid #e9dfce;
+      background:
+        linear-gradient(90deg, transparent 48%, rgba(233, 223, 206, 0.9) 49%, rgba(233, 223, 206, 0.9) 52%, transparent 53%),
+        linear-gradient(transparent 48%, rgba(233, 223, 206, 0.9) 49%, rgba(233, 223, 206, 0.9) 52%, transparent 53%),
+        linear-gradient(135deg, #e1d2ab, #73927c);
+      box-shadow: 14px 18px 0 rgba(8, 39, 32, 0.12);
     }
 
     .art-frame {
@@ -618,6 +631,164 @@
       font-size: 0.8rem;
     }
 
+    /* Student life */
+    .student-life {
+      position: relative;
+      padding: 138px 0;
+      overflow: hidden;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 18% 19%, rgba(199, 114, 77, 0.55), transparent 24%),
+        radial-gradient(circle at 87% 70%, rgba(168, 187, 157, 0.25), transparent 26%),
+        linear-gradient(135deg, #123a33, #092720);
+    }
+
+    .student-life::after {
+      position: absolute;
+      right: -90px;
+      bottom: -140px;
+      width: 510px;
+      height: 510px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 44px rgba(255, 255, 255, 0.04),
+        0 0 0 95px rgba(255, 255, 255, 0.025);
+      content: "";
+    }
+
+    .student-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(45px, 9vw, 125px);
+      align-items: center;
+    }
+
+    .student-life .eyebrow {
+      color: var(--sage);
+    }
+
+    .student-life .section-heading {
+      color: var(--white);
+    }
+
+    .student-life .section-heading em {
+      color: #e5c888;
+    }
+
+    .student-copy {
+      max-width: 570px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    .student-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .student-feature {
+      padding: 18px;
+      border: 1px solid rgba(255, 255, 255, 0.17);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+    }
+
+    .student-feature span {
+      display: block;
+      margin-bottom: 7px;
+      color: #e4ca98;
+      font-family: "Playfair Display", serif;
+      font-size: 1.55rem;
+    }
+
+    .student-feature p {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.76rem;
+      line-height: 1.55;
+    }
+
+    .student-residence-card {
+      position: relative;
+      min-height: 510px;
+      padding: 30px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(6, 31, 25, 0.03), rgba(6, 31, 25, 0.7)),
+        linear-gradient(135deg, #d7c8a9 0%, #92aa87 43%, #315e51 100%);
+      box-shadow: 0 28px 70px rgba(0, 0, 0, 0.26);
+    }
+
+    .student-residence-card::before {
+      position: absolute;
+      top: 10%;
+      right: 10%;
+      width: 50%;
+      height: 52%;
+      border: 13px solid rgba(248, 243, 234, 0.85);
+      background:
+        linear-gradient(90deg, transparent 48%, rgba(248, 243, 234, 0.86) 49%, rgba(248, 243, 234, 0.86) 52%, transparent 53%),
+        linear-gradient(transparent 48%, rgba(248, 243, 234, 0.86) 49%, rgba(248, 243, 234, 0.86) 52%, transparent 53%),
+        rgba(18, 58, 51, 0.3);
+      box-shadow: -22px 23px 0 rgba(8, 39, 32, 0.17);
+      content: "";
+    }
+
+    .student-residence-card::after {
+      position: absolute;
+      bottom: -45px;
+      left: -34px;
+      width: 240px;
+      height: 240px;
+      border: 1px solid rgba(255, 255, 255, 0.33);
+      border-radius: 100% 0 100% 0;
+      content: "";
+      transform: rotate(-22deg);
+    }
+
+    .residence-card-top {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      color: rgba(255, 255, 255, 0.84);
+      font-family: "DM Mono", monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    .residence-card-bottom {
+      position: absolute;
+      z-index: 2;
+      right: 30px;
+      bottom: 31px;
+      left: 30px;
+    }
+
+    .residence-card-bottom h3 {
+      max-width: 310px;
+      color: var(--white);
+      font-family: "Playfair Display", serif;
+      font-size: 2.65rem;
+      font-weight: 500;
+      letter-spacing: -0.05em;
+      line-height: 0.95;
+    }
+
+    .residence-card-bottom p {
+      max-width: 315px;
+      margin-top: 14px;
+      color: rgba(255, 255, 255, 0.77);
+      font-size: 0.82rem;
+      line-height: 1.7;
+    }
+
     /* Experiences */
     .experiences {
       padding: 132px 0 140px;
@@ -627,8 +798,8 @@
 
     .experiences-head {
       display: flex;
-      justify-content: space-between;
       align-items: end;
+      justify-content: space-between;
       gap: 40px;
       margin-bottom: 56px;
     }
@@ -671,7 +842,7 @@
     }
 
     .experience-card:nth-child(1) {
-      grid-column: span 5;
+      grid-column: span 4;
       background:
         linear-gradient(180deg, transparent 30%, rgba(2, 23, 18, 0.78)),
         radial-gradient(circle at 75% 29%, #d7bd84 0 6%, transparent 6.5%),
@@ -679,7 +850,7 @@
     }
 
     .experience-card:nth-child(2) {
-      grid-column: span 3;
+      grid-column: span 4;
       background:
         linear-gradient(180deg, transparent 32%, rgba(10, 25, 22, 0.78)),
         radial-gradient(ellipse at 30% 24%, #e6d4ae 0 14%, transparent 14.5%),
@@ -729,9 +900,9 @@
     }
 
     .experience-content {
-      align-self: end;
       position: relative;
       z-index: 2;
+      align-self: end;
     }
 
     .experience-type {
@@ -772,7 +943,7 @@
       text-transform: uppercase;
     }
 
-    /* Booking section */
+    /* Booking */
     .booking {
       position: relative;
       padding: 142px 0;
@@ -1016,7 +1187,6 @@
       letter-spacing: 0.04em;
     }
 
-    /* Floating button */
     .whatsapp-button {
       position: fixed;
       z-index: 40;
@@ -1050,7 +1220,6 @@
       box-shadow: 0 0 0 5px rgba(194, 231, 188, 0.16);
     }
 
-    /* Responsive */
     @media (max-width: 920px) {
       .nav-links,
       .nav-cta {
@@ -1068,6 +1237,7 @@
 
       .hero-content,
       .about-grid,
+      .student-grid,
       .booking-grid {
         grid-template-columns: 1fr;
       }
@@ -1088,10 +1258,8 @@
         max-width: 540px;
       }
 
-      .experience-card:nth-child(1),
-      .experience-card:nth-child(2),
-      .experience-card:nth-child(3) {
-        grid-column: span 4;
+      .student-residence-card {
+        max-width: 550px;
       }
 
       .footer-top {
@@ -1138,26 +1306,27 @@
         font-size: 0.91rem;
       }
 
-      .stats-grid {
+      .trust-grid {
         grid-template-columns: 1fr 1fr;
       }
 
-      .stat {
+      .trust-item {
         min-height: 135px;
         padding: 26px 20px;
         border-bottom: 1px solid rgba(23, 52, 47, 0.14);
       }
 
-      .stat:nth-child(2) {
+      .trust-item:nth-child(2) {
         border-right: none;
       }
 
-      .stat:nth-child(3),
-      .stat:nth-child(4) {
+      .trust-item:nth-child(3),
+      .trust-item:nth-child(4) {
         border-bottom: none;
       }
 
       .about,
+      .student-life,
       .experiences,
       .booking,
       .quote-section {
@@ -1172,6 +1341,31 @@
         top: 50px;
         width: 210px;
         height: 320px;
+      }
+
+      .art-window {
+        top: 87px;
+        left: calc(25% + 31px);
+        width: 145px;
+        height: 104px;
+        border-width: 9px;
+      }
+
+      .student-features {
+        grid-template-columns: 1fr;
+      }
+
+      .student-residence-card {
+        min-height: 430px;
+      }
+
+      .student-residence-card::before {
+        width: 47%;
+        height: 47%;
+      }
+
+      .residence-card-bottom h3 {
+        font-size: 2.25rem;
       }
 
       .experiences-head {
@@ -1242,13 +1436,13 @@
       <nav aria-label="Primary Navigation">
         <ul class="nav-links">
           <li><a href="#story">Our Story</a></li>
-          <li><a href="#experiences">Experiences</a></li>
-          <li><a href="#stay">Stay With Us</a></li>
+          <li><a href="#residences">Student Residences</a></li>
+          <li><a href="#experiences">Our Spaces</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
-      <a class="nav-cta" href="#stay">Make an Enquiry</a>
+      <a class="nav-cta" href="#enquiry">Enquire Now</a>
 
       <button class="menu-button" type="button" aria-label="Open navigation menu">
         ☰
@@ -1266,22 +1460,22 @@
           <div class="eyebrow">Bilvaya Hospitality · India</div>
 
           <h1 class="hero-title">
-            Places that make<br />
-            life feel <em>richer.</em>
+            A better place<br />
+            to <em>become you.</em>
           </h1>
 
           <p class="hero-description">
-            Bilvaya creates distinct spaces for rest, connection and belonging—
-            from soulful hotels and nature-led resorts to vibrant student cafés
-            and thoughtfully managed residences.
+            Bilvaya creates safe, comfortable and inspiring spaces for students
+            to live, learn, meet and grow. Our student residences are built with
+            the warmth of home and the energy of a connected community.
           </p>
 
           <div class="hero-actions">
-            <a class="button button-primary" href="#experiences">
-              Explore Bilvaya <span class="arrow">→</span>
+            <a class="button button-primary" href="#residences">
+              Explore Residences <span class="arrow">→</span>
             </a>
-            <a class="button button-outline" href="#stay">
-              Plan your stay
+            <a class="button button-outline" href="#enquiry">
+              Enquire for a room
             </a>
           </div>
         </div>
@@ -1289,8 +1483,8 @@
         <aside class="hero-side-note">
           <span class="number">01</span>
           <p>
-            Every Bilvaya address begins with one question: how should this
-            place make people feel?
+            More than a room. Bilvaya gives students a place to settle in,
+            feel safe and make the most of every new beginning.
           </p>
         </aside>
       </div>
@@ -1298,60 +1492,119 @@
       <div class="hero-scroll">Scroll to discover</div>
     </section>
 
-    <section class="stats" aria-label="Bilvaya at a glance">
-      <div class="container stats-grid">
-        <div class="stat">
-          <span class="stat-number">04</span>
-          <span class="stat-label">Hospitality formats</span>
+    <section class="trust-strip" aria-label="Bilvaya student residence benefits">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <span class="trust-number">Safe</span>
+          <span class="trust-label">Managed living spaces</span>
         </div>
-        <div class="stat">
-          <span class="stat-number">01</span>
-          <span class="stat-label">Shared philosophy</span>
+        <div class="trust-item">
+          <span class="trust-number">Ready</span>
+          <span class="trust-label">Comfort from day one</span>
         </div>
-        <div class="stat">
-          <span class="stat-number">∞</span>
-          <span class="stat-label">Moments to remember</span>
+        <div class="trust-item">
+          <span class="trust-number">Close</span>
+          <span class="trust-label">To campus and city life</span>
         </div>
-        <div class="stat">
-          <span class="stat-number">24/7</span>
-          <span class="stat-label">Care in every detail</span>
+        <div class="trust-item">
+          <span class="trust-number">Alive</span>
+          <span class="trust-label">A community to grow in</span>
         </div>
       </div>
     </section>
 
     <section class="about" id="story">
       <div class="container about-grid">
-        <div class="about-art" aria-label="Abstract Bilvaya hospitality artwork">
+        <div class="about-art" aria-label="Bilvaya student residence illustration">
+          <div class="art-window"></div>
           <div class="art-frame"></div>
-          <div class="art-label">Rooted in warmth.</div>
+          <div class="art-label">A room with a future.</div>
         </div>
 
         <div class="about-text">
-          <div class="eyebrow">The Bilvaya way</div>
+          <div class="eyebrow">Student hospitality, thoughtfully done</div>
 
           <h2 class="section-heading">
-            Not just places to visit.<br />
-            Places to <em>belong.</em>
+            A residence that feels like <em>your own place.</em>
           </h2>
 
           <p class="section-copy">
-            We believe hospitality is not a service—it is a feeling. Bilvaya
-            brings together design, comfort, local character and genuine human
-            care to create addresses that stay with you long after you leave.
+            Moving to a new city should feel exciting, not overwhelming.
+            Bilvaya Student Residences are designed for students who want more
+            than accommodation. They want comfort, security, friendship and a
+            dependable everyday routine.
           </p>
 
           <p class="section-copy" style="margin-top: 17px;">
-            Whether it is a weekend escape, an everyday coffee ritual, a
-            student’s first independent home, or a longer residential stay,
-            every Bilvaya space is designed around meaningful living.
+            We create well-managed residences where students can focus on their
+            studies, enjoy community life and build confidence for the future.
+            Every space is practical, welcoming and made for real student life.
           </p>
 
           <div class="signature">
             <div class="signature-mark">B</div>
             <div class="signature-copy">
-              <strong>Built with intention</strong>
-              <span>Comfort, culture and connection in balance.</span>
+              <strong>Bilvaya Student Living</strong>
+              <span>Safe homes. Strong communities. Brighter beginnings.</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="student-life" id="residences">
+      <div class="container student-grid">
+        <div>
+          <div class="eyebrow">Bilvaya Student Residences</div>
+
+          <h2 class="section-heading">
+            Your room.<br />
+            Your routine.<br />
+            Your <em>community.</em>
+          </h2>
+
+          <p class="student-copy">
+            Bilvaya is building student residences for the way young people
+            actually live today. Private comfort, shared energy, dependable
+            support and spaces that help every resident feel at home in a new
+            city.
+          </p>
+
+          <div class="student-features">
+            <div class="student-feature">
+              <span>01</span>
+              <p>Furnished rooms designed for comfort, privacy and study.</p>
+            </div>
+
+            <div class="student-feature">
+              <span>02</span>
+              <p>Secure, managed premises with resident-focused support.</p>
+            </div>
+
+            <div class="student-feature">
+              <span>03</span>
+              <p>Common areas for conversations, meals, work and friendships.</p>
+            </div>
+
+            <div class="student-feature">
+              <span>04</span>
+              <p>Student cafés and social spaces that bring the community together.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="student-residence-card">
+          <div class="residence-card-top">
+            <span>Bilvaya Living</span>
+            <span>Student Residence</span>
+          </div>
+
+          <div class="residence-card-bottom">
+            <h3>Live close to what matters.</h3>
+            <p>
+              A secure and welcoming base for study, friendship, independence
+              and all the small moments that shape student life.
+            </p>
           </div>
         </div>
       </div>
@@ -1361,15 +1614,16 @@
       <div class="container">
         <div class="experiences-head">
           <div>
-            <div class="eyebrow">One brand, many ways to belong</div>
+            <div class="eyebrow">Beyond student residences</div>
             <h2 class="section-heading">
-              Discover your<br /><em>Bilvaya.</em>
+              Spaces for every<br /><em>chapter of life.</em>
             </h2>
           </div>
 
           <p class="experiences-intro">
-            Each Bilvaya experience has its own rhythm, personality and purpose—
-            united by thoughtful design and heartfelt hospitality.
+            Bilvaya brings the same care, warmth and attention to every
+            experience we create, from student living to stays, cafés and
+            getaways.
           </p>
         </div>
 
@@ -1380,10 +1634,10 @@
               <span class="experience-type">Hotels & Boutique Stays</span>
               <h3>Bilvaya Hotels</h3>
               <p>
-                Refined, restful and deeply connected to the destination around
-                you.
+                Comfortable stays shaped by local character, thoughtful service
+                and quiet refinement.
               </p>
-              <a class="experience-link" href="#stay">
+              <a class="experience-link" href="#enquiry">
                 Discover stays <span class="arrow">→</span>
               </a>
             </div>
@@ -1395,9 +1649,10 @@
               <span class="experience-type">Nature & Leisure</span>
               <h3>Bilvaya Resorts</h3>
               <p>
-                Slow mornings, open skies and restorative moments in nature.
+                Slow mornings, open skies and refreshing escapes made for
+                families, friends and celebrations.
               </p>
-              <a class="experience-link" href="#stay">
+              <a class="experience-link" href="#enquiry">
                 Explore resorts <span class="arrow">→</span>
               </a>
             </div>
@@ -1409,8 +1664,8 @@
               <span class="experience-type">Cafés & Community</span>
               <h3>Bilvaya Café</h3>
               <p>
-                A familiar table for students, creators, conversations and good
-                coffee.
+                Friendly spaces for students, meetings, ideas, coffee and
+                everyday conversations.
               </p>
               <a class="experience-link" href="#contact">
                 Find your table <span class="arrow">→</span>
@@ -1421,35 +1676,33 @@
       </div>
     </section>
 
-    <section class="booking" id="stay">
+    <section class="booking" id="enquiry">
       <div class="container booking-grid">
         <div>
-          <div class="eyebrow">Start your Bilvaya story</div>
+          <div class="eyebrow">Start with a conversation</div>
           <h2 class="section-heading">
-            A stay that feels<br />
-            like it was <em>meant</em><br />
-            for you.
+            Find a place that feels <em>right.</em>
           </h2>
           <p class="section-copy">
-            Tell us what you are looking for. Our hospitality team will help
-            you find the right Bilvaya experience—whether for travel, leisure,
-            residence, celebration or student life.
+            Whether you are a student, parent, institution, travel guest or
+            potential partner, share your requirement with us. The Bilvaya team
+            will help you with the most suitable option.
           </p>
         </div>
 
         <form class="booking-form" id="enquiryForm">
-          <h3 class="form-title">Plan your experience</h3>
+          <h3 class="form-title">Send an enquiry</h3>
 
           <div class="form-grid">
             <div class="field full">
-              <label for="experience">I am interested in</label>
+              <label for="experience">What are you looking for?</label>
               <select id="experience" required>
-                <option value="">Choose an experience</option>
-                <option>Bilvaya Hotels</option>
-                <option>Bilvaya Resorts</option>
-                <option>Bilvaya Student Café</option>
-                <option>Bilvaya Residences</option>
-                <option>Events & Celebrations</option>
+                <option value="">Select an option</option>
+                <option>Student Residence</option>
+                <option>Student Café</option>
+                <option>Hotel Stay</option>
+                <option>Resort Stay</option>
+                <option>Group or Institutional Accommodation</option>
                 <option>Business Partnership</option>
               </select>
             </div>
@@ -1465,12 +1718,12 @@
             </div>
 
             <div class="field">
-              <label for="date">Preferred date</label>
-              <input id="date" type="date" />
+              <label for="city">Preferred city</label>
+              <input id="city" type="text" placeholder="City name" />
             </div>
 
             <div class="field">
-              <label for="guests">Guests / residents</label>
+              <label for="guests">People / residents</label>
               <select id="guests">
                 <option>1 Person</option>
                 <option>2 People</option>
@@ -1486,7 +1739,7 @@
           </button>
 
           <p class="form-note">
-            Our team will respond shortly with the best available options.
+            A Bilvaya representative will get in touch with you shortly.
           </p>
         </form>
       </div>
@@ -1496,10 +1749,10 @@
       <div class="quote-inner container">
         <span class="quote-symbol">“</span>
         <blockquote>
-          The finest hospitality does not simply welcome you in.
-          It gives you a reason to return.
+          A good residence gives you a room.<br />
+          A great one gives you a sense of belonging.
         </blockquote>
-        <span class="quote-author">— The Bilvaya Philosophy</span>
+        <span class="quote-author">Bilvaya Student Living</span>
       </div>
     </section>
   </main>
@@ -1515,28 +1768,28 @@
             Bilvaya
           </a>
           <p>
-            Thoughtfully crafted hotels, resorts, cafés and residences for a
-            more meaningful way to stay, gather and live.
+            Student residences, cafés, hotels and resort experiences shaped
+            around comfort, community and thoughtful hospitality.
           </p>
         </div>
 
         <div>
           <h4 class="footer-title">Explore</h4>
           <ul class="footer-links">
-            <li><a href="#story">Our Story</a></li>
+            <li><a href="#residences">Student Residences</a></li>
             <li><a href="#experiences">Hotels & Resorts</a></li>
             <li><a href="#experiences">Student Cafés</a></li>
-            <li><a href="#experiences">Residences</a></li>
+            <li><a href="#story">Our Story</a></li>
           </ul>
         </div>
 
         <div>
           <h4 class="footer-title">Connect</h4>
           <ul class="footer-links">
-            <li><a href="#stay">Make an Enquiry</a></li>
+            <li><a href="#enquiry">Send an Enquiry</a></li>
             <li><a href="#contact">Partner With Us</a></li>
             <li><a href="#contact">Careers</a></li>
-            <li><a href="#contact">Press & Media</a></li>
+            <li><a href="#contact">Institutional Partnerships</a></li>
           </ul>
         </div>
 
@@ -1548,14 +1801,14 @@
           </a>
           <span class="contact-line">
             Maharashtra, India<br />
-            Expanding thoughtfully.
+            Building better student living.
           </span>
         </div>
       </div>
 
       <div class="footer-bottom">
         <span>© 2026 Bilvaya Hospitality. All rights reserved.</span>
-        <span>Stay beyond ordinary.</span>
+        <span>Made for meaningful living.</span>
       </div>
     </div>
   </footer>
@@ -1582,10 +1835,11 @@
         alert(
           "Thank you, " +
           name +
-          "! Your enquiry for " +
+          ". Your enquiry for " +
           experience +
           " has been received. The Bilvaya team will contact you shortly."
         );
+
         this.reset();
       }
     });
