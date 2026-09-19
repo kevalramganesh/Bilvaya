@@ -1,648 +1,1594 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Bilvaya Hospitality | Resorts, Hotels and Student Hospitality</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bilvaya Hospitality is a growing hospitality group operating resorts, hotels and student hospitality solutions with a focus on comfort, service and operational excellence.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Bilvaya Hospitality — Thoughtfully crafted hotels, resorts, residences and student cafés."
+  />
+  <title>Bilvaya Hospitality | Stay Beyond Ordinary</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    :root{
-      --bg: #ffffff;
-      --bg-alt: #f7f8fa;
-      --text: #0f1724;
-      --text-muted: #475569;
-      --brand: #0b57d0;
-      --brand-dark: #073a8a;
-      --border: #e5e9f0;
-      --shadow: 0 10px 30px rgba(2, 12, 27, 0.08);
+    :root {
+      --ink: #17342f;
+      --forest: #123a33;
+      --deep: #092720;
+      --moss: #426f55;
+      --sage: #a8bb9d;
+      --sand: #e9dfce;
+      --cream: #f8f3ea;
+      --clay: #c7724d;
+      --gold: #bd9b57;
+      --white: #ffffff;
+      --line: rgba(23, 52, 47, 0.14);
+      --shadow: 0 20px 70px rgba(8, 39, 32, 0.16);
     }
 
-    *{ box-sizing: border-box; }
-    html,body{ margin:0; padding:0; }
-    body{
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--text);
-      background: var(--bg);
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    a{ color: var(--brand); text-decoration: none; }
-    a:hover{ text-decoration: underline; }
+    html {
+      scroll-behavior: smooth;
+    }
 
-    .container{
-      width: 100%;
-      max-width: 1160px;
+    body {
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "Manrope", sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 48px));
       margin: 0 auto;
-      padding: 0 20px;
     }
 
-    /* Header */
-    header{
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: saturate(180%) blur(8px);
-      border-bottom: 1px solid var(--border);
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--moss);
+      font-family: "DM Mono", monospace;
+      font-size: 0.71rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
     }
-    .nav{
+
+    .eyebrow::before {
+      width: 24px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 14px 0 22px;
+      color: var(--forest);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.35rem, 5vw, 4.8rem);
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      line-height: 0.98;
+    }
+
+    .section-heading em {
+      color: var(--clay);
+      font-weight: 500;
+    }
+
+    .section-copy {
+      max-width: 590px;
+      color: rgba(23, 52, 47, 0.75);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+
+    /* Decorative plant mark */
+    .brand-mark {
+      position: relative;
+      width: 36px;
+      height: 36px;
+      flex: 0 0 auto;
+    }
+
+    .brand-mark span {
+      position: absolute;
+      display: block;
+      width: 15px;
+      height: 24px;
+      border-radius: 100% 0 100% 0;
+      background: currentColor;
+      transform-origin: bottom center;
+    }
+
+    .brand-mark span:nth-child(1) {
+      top: 0;
+      left: 11px;
+      transform: rotate(0deg);
+    }
+
+    .brand-mark span:nth-child(2) {
+      bottom: 1px;
+      left: 0;
+      transform: rotate(-120deg);
+    }
+
+    .brand-mark span:nth-child(3) {
+      right: 0;
+      bottom: 1px;
+      transform: rotate(120deg);
+    }
+
+    .brand-mark::after {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--cream);
+      content: "";
+    }
+
+    /* Navigation */
+    .site-header {
+      position: absolute;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: var(--white);
+    }
+
+    .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding: 14px 0;
+      min-height: 94px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
     }
-    .logo{
-      font-weight: 800;
-      font-size: 20px;
-      letter-spacing: 0.2px;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .logo span{ color: var(--brand); }
-    nav ul{
-      list-style: none;
-      display: flex;
-      gap: 22px;
-      margin: 0;
-      padding: 0;
-    }
-    nav a{
-      color: var(--text-muted);
-      font-weight: 500;
-      font-size: 14.5px;
-    }
-    nav a:hover{ color: var(--text); text-decoration: none; }
 
-    .btn{
-      display: inline-block;
-      background: var(--brand);
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 8px;
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 1.38rem;
       font-weight: 600;
-      font-size: 14.5px;
+      letter-spacing: -0.05em;
+    }
+
+    .logo .brand-mark {
+      color: var(--sage);
+      transform: scale(0.76);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      position: relative;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      opacity: 0.87;
+      transition: opacity 0.25s ease;
+    }
+
+    .nav-links a::after {
+      position: absolute;
+      right: 0;
+      bottom: -8px;
+      left: 0;
+      height: 1px;
+      background: var(--sage);
+      content: "";
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+
+    .nav-cta,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      min-height: 48px;
+      padding: 0 19px;
       border: 1px solid transparent;
-      transition: background 0.2s ease, transform 0.06s ease;
-      text-decoration: none;
+      cursor: pointer;
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
     }
-    .btn:hover{
-      background: var(--brand-dark);
-      text-decoration: none;
+
+    .nav-cta {
+      border-color: rgba(255, 255, 255, 0.4);
+      color: var(--white);
     }
-    .btn-outline{
+
+    .nav-cta:hover {
+      background: var(--white);
+      color: var(--forest);
+      transform: translateY(-2px);
+    }
+
+    .menu-button {
+      display: none;
+      width: 45px;
+      height: 45px;
+      border: 1px solid rgba(255, 255, 255, 0.35);
       background: transparent;
-      color: var(--brand);
-      border: 1px solid var(--brand);
-    }
-    .btn-outline:hover{
-      background: rgba(11,87,208,0.06);
-      text-decoration: none;
+      color: white;
+      cursor: pointer;
     }
 
     /* Hero */
-    .hero{
-      background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
-      border-bottom: 1px solid var(--border);
-      padding: 64px 0 40px;
-    }
-    .hero-inner{
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
-      align-items: center;
-    }
-    .hero h1{
-      font-size: 42px;
-      line-height: 1.12;
-      margin: 0 0 14px;
-      letter-spacing: -0.4px;
-    }
-    .hero p{
-      font-size: 17px;
-      color: var(--text-muted);
-      margin: 0 0 22px;
-      max-width: 560px;
-    }
-    .hero-actions{
+    .hero {
+      position: relative;
       display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
+      align-items: flex-end;
+      min-height: 860px;
+      padding: 155px 0 75px;
+      color: var(--white);
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 76% 29%, rgba(209, 169, 105, 0.42), transparent 25%),
+        radial-gradient(circle at 13% 100%, rgba(124, 160, 112, 0.24), transparent 31%),
+        linear-gradient(120deg, #06231e 0%, #174b3f 51%, #2e6754 100%);
     }
-    .hero-card{
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: var(--shadow);
-    }
-    .hero-card h3{
-      margin: 0 0 10px;
-      font-size: 18px;
-    }
-    .hero-card p{
-      margin: 0 0 14px;
-      font-size: 14.5px;
-      color: var(--text-muted);
-    }
-    .hero-card .mini-grid{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .mini-card{
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px;
-      font-size: 13.5px;
-    }
-    .mini-card strong{ display: block; margin-bottom: 4px; }
 
-    /* Sections */
-    section{
-      padding: 56px 0;
-      border-bottom: 1px solid var(--border);
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      opacity: 0.24;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+      background-size: 72px 72px;
+      content: "";
+      mask-image: linear-gradient(to bottom, transparent, black 55%, transparent);
     }
-    section:last-of-type{ border-bottom: none; }
-    .section-title{
-      font-size: 28px;
-      margin: 0 0 10px;
-      letter-spacing: -0.3px;
+
+    .hero-orb {
+      position: absolute;
+      top: 17%;
+      right: 8%;
+      width: min(43vw, 620px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+      box-shadow:
+        inset 0 0 0 26px rgba(255, 255, 255, 0.025),
+        inset 0 0 0 85px rgba(255, 255, 255, 0.025);
     }
-    .section-sub{
-      font-size: 16px;
-      color: var(--text-muted);
-      margin: 0 0 26px;
-      max-width: 720px;
+
+    .hero-orb::before,
+    .hero-orb::after {
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .hero-orb::before {
+      top: 18%;
+      right: 18%;
+      bottom: 18%;
+      left: 18%;
+    }
+
+    .hero-orb::after {
+      top: 35%;
+      right: 35%;
+      bottom: 35%;
+      left: 35%;
+      background: rgba(235, 210, 159, 0.28);
+      box-shadow: 0 0 90px rgba(235, 210, 159, 0.38);
+    }
+
+    .hero-leaf {
+      position: absolute;
+      top: 19%;
+      right: -4%;
+      width: 360px;
+      height: 590px;
+      border: 1px solid rgba(223, 231, 204, 0.3);
+      border-radius: 80% 0 80% 0;
+      transform: rotate(-22deg);
+    }
+
+    .hero-leaf::after {
+      position: absolute;
+      top: 8%;
+      left: 52%;
+      width: 1px;
+      height: 85%;
+      background: rgba(223, 231, 204, 0.3);
+      content: "";
+      transform: rotate(20deg);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 320px;
+      align-items: end;
+      gap: 60px;
+    }
+
+    .hero .eyebrow {
+      color: var(--sage);
+    }
+
+    .hero-title {
+      max-width: 850px;
+      margin: 17px 0 26px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3.4rem, 7.8vw, 7.6rem);
+      font-weight: 500;
+      letter-spacing: -0.065em;
+      line-height: 0.87;
+    }
+
+    .hero-title em {
+      color: #e4ca98;
+      font-weight: 500;
+    }
+
+    .hero-description {
+      max-width: 555px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 33px;
+    }
+
+    .button-primary {
+      background: var(--sand);
+      color: var(--forest);
+    }
+
+    .button-primary:hover {
+      background: var(--white);
+      transform: translateY(-3px);
+    }
+
+    .button-outline {
+      border-color: rgba(255, 255, 255, 0.42);
+      color: var(--white);
+    }
+
+    .button-outline:hover {
+      border-color: var(--white);
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .arrow {
+      font-size: 1.08rem;
+      line-height: 1;
+      transition: transform 0.25s ease;
+    }
+
+    .button:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    .hero-side-note {
+      padding: 26px;
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-side-note .number {
+      display: block;
+      margin-bottom: 20px;
+      color: var(--sage);
+      font-family: "Playfair Display", serif;
+      font-size: 3.1rem;
+      font-style: italic;
+      line-height: 0.8;
+    }
+
+    .hero-side-note p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.85rem;
+      line-height: 1.7;
+    }
+
+    .hero-scroll {
+      position: absolute;
+      z-index: 2;
+      right: 45px;
+      bottom: 36px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.65);
+      font-family: "DM Mono", monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      transform: rotate(90deg);
+      transform-origin: right center;
+    }
+
+    .hero-scroll::after {
+      width: 55px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    /* Stats */
+    .stats {
+      position: relative;
+      z-index: 5;
+      margin-top: -1px;
+      background: var(--sand);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      min-height: 170px;
+      padding: 35px 28px;
+      border-right: 1px solid rgba(23, 52, 47, 0.14);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      display: block;
+      color: var(--forest);
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      line-height: 1;
+    }
+
+    .stat-label {
+      display: block;
+      margin-top: 11px;
+      color: rgba(23, 52, 47, 0.65);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
     }
 
     /* About */
-    .about-grid{
+    .about {
+      padding: 145px 0;
+    }
+
+    .about-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 36px;
+      grid-template-columns: 0.92fr 1.08fr;
+      align-items: center;
+      gap: clamp(50px, 10vw, 145px);
+    }
+
+    .about-art {
+      position: relative;
+      min-height: 580px;
+      overflow: hidden;
+      background: #b3c19e;
+    }
+
+    .about-art::before {
+      position: absolute;
+      width: 290px;
+      height: 430px;
+      top: 60px;
+      left: 25%;
+      border-radius: 150px 150px 0 0;
+      background: #244f43;
+      content: "";
+    }
+
+    .about-art::after {
+      position: absolute;
+      width: 220px;
+      height: 220px;
+      right: 20px;
+      bottom: 32px;
+      border-radius: 50%;
+      background: var(--clay);
+      box-shadow: -220px -275px 0 -70px #e3d9c4;
+      content: "";
+    }
+
+    .art-frame {
+      position: absolute;
+      z-index: 2;
+      top: 23px;
+      right: 23px;
+      bottom: 23px;
+      left: 23px;
+      border: 1px solid rgba(255, 255, 255, 0.45);
+    }
+
+    .art-label {
+      position: absolute;
+      z-index: 3;
+      bottom: 44px;
+      left: 44px;
+      color: var(--white);
+      font-family: "Playfair Display", serif;
+      font-size: 1.45rem;
+      font-style: italic;
+    }
+
+    .about-text {
+      padding-right: 20px;
+    }
+
+    .about-text .section-heading {
+      font-size: clamp(2.3rem, 4.4vw, 4.25rem);
+    }
+
+    .signature {
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      margin-top: 38px;
+    }
+
+    .signature-mark {
+      display: grid;
+      width: 52px;
+      height: 52px;
+      place-items: center;
+      border: 1px solid var(--moss);
+      border-radius: 50%;
+      color: var(--moss);
+      font-family: "Playfair Display", serif;
+      font-size: 1.5rem;
+      font-style: italic;
+    }
+
+    .signature-copy strong {
+      display: block;
+      color: var(--forest);
+      font-size: 0.81rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .signature-copy span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(23, 52, 47, 0.6);
+      font-size: 0.8rem;
+    }
+
+    /* Experiences */
+    .experiences {
+      padding: 132px 0 140px;
+      color: var(--white);
+      background: var(--deep);
+    }
+
+    .experiences-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 40px;
+      margin-bottom: 56px;
+    }
+
+    .experiences .eyebrow {
+      color: var(--sage);
+    }
+
+    .experiences .section-heading {
+      margin-bottom: 0;
+      color: var(--white);
+    }
+
+    .experiences-intro {
+      max-width: 350px;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 0.94rem;
+      line-height: 1.8;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .experience-card {
+      position: relative;
+      display: flex;
+      min-height: 480px;
+      padding: 29px;
+      overflow: hidden;
+      isolation: isolate;
+      background: #1d4c40;
+      transition: transform 0.35s ease;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .experience-card:nth-child(1) {
+      grid-column: span 5;
+      background:
+        linear-gradient(180deg, transparent 30%, rgba(2, 23, 18, 0.78)),
+        radial-gradient(circle at 75% 29%, #d7bd84 0 6%, transparent 6.5%),
+        linear-gradient(130deg, #9aae93 0%, #5f7e69 45%, #18443a 100%);
+    }
+
+    .experience-card:nth-child(2) {
+      grid-column: span 3;
+      background:
+        linear-gradient(180deg, transparent 32%, rgba(10, 25, 22, 0.78)),
+        radial-gradient(ellipse at 30% 24%, #e6d4ae 0 14%, transparent 14.5%),
+        linear-gradient(160deg, #b46443 0%, #734b35 48%, #1b3d37 100%);
+    }
+
+    .experience-card:nth-child(3) {
+      grid-column: span 4;
+      background:
+        linear-gradient(180deg, transparent 35%, rgba(2, 23, 18, 0.8)),
+        radial-gradient(circle at 68% 22%, #e9d4a1 0 7%, transparent 7.5%),
+        linear-gradient(145deg, #798d6c 0%, #3a6a55 45%, #173d35 100%);
+    }
+
+    .experience-card::before {
+      position: absolute;
+      z-index: -1;
+      top: 15%;
+      right: -13%;
+      width: 76%;
+      height: 68%;
+      border: 1px solid rgba(255, 255, 255, 0.36);
+      border-radius: 100% 0 100% 0;
+      content: "";
+      transform: rotate(-26deg);
+    }
+
+    .experience-card::after {
+      position: absolute;
+      z-index: -1;
+      top: 12px;
+      right: 12px;
+      bottom: 12px;
+      left: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      content: "";
+    }
+
+    .experience-index {
+      position: absolute;
+      top: 30px;
+      left: 29px;
+      color: rgba(255, 255, 255, 0.65);
+      font-family: "DM Mono", monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.11em;
+    }
+
+    .experience-content {
+      align-self: end;
+      position: relative;
+      z-index: 2;
+    }
+
+    .experience-type {
+      display: block;
+      margin-bottom: 11px;
+      color: var(--sage);
+      font-family: "DM Mono", monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .experience-card h3 {
+      margin-bottom: 13px;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      line-height: 1;
+    }
+
+    .experience-card p {
+      max-width: 270px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.84rem;
+      line-height: 1.7;
+    }
+
+    .experience-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+    }
+
+    /* Booking section */
+    .booking {
+      position: relative;
+      padding: 142px 0;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .booking::before {
+      position: absolute;
+      top: -130px;
+      right: -140px;
+      width: 470px;
+      height: 470px;
+      border: 1px solid rgba(66, 111, 85, 0.24);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 44px rgba(66, 111, 85, 0.05),
+        0 0 0 95px rgba(66, 111, 85, 0.035);
+      content: "";
+    }
+
+    .booking-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: clamp(45px, 9vw, 130px);
       align-items: start;
     }
-    .about-text p{ margin: 0 0 14px; }
-    .stat-grid{
+
+    .booking .section-heading {
+      margin-bottom: 23px;
+    }
+
+    .booking-form {
+      padding: 33px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .form-title {
+      margin-bottom: 25px;
+      color: var(--forest);
+      font-family: "Playfair Display", serif;
+      font-size: 1.72rem;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+    }
+
+    .form-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      gap: 16px;
     }
-    .stat-card{
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 16px;
+
+    .field {
+      position: relative;
     }
-    .stat-card strong{
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    .field label {
       display: block;
-      font-size: 22px;
-      margin-bottom: 4px;
-    }
-    .stat-card span{
-      font-size: 13.5px;
-      color: var(--text-muted);
-    }
-
-    /* Portfolio */
-    .portfolio-grid{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-    .card{
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px;
-      transition: box-shadow 0.2s ease, transform 0.08s ease;
-    }
-    .card:hover{
-      box-shadow: var(--shadow);
-      transform: translateY(-2px);
-    }
-    .card h3{
       margin: 0 0 8px;
-      font-size: 18px;
-    }
-    .card p{
-      margin: 0 0 12px;
-      font-size: 14.5px;
-      color: var(--text-muted);
-    }
-    .tags{
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-    .tag{
-      font-size: 12px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      color: var(--text-muted);
+      color: var(--moss);
+      font-family: "DM Mono", monospace;
+      font-size: 0.64rem;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
     }
 
-    /* Student hospitality */
-    .student-grid{
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 28px;
-      align-items: start;
+    .field input,
+    .field select {
+      width: 100%;
+      height: 51px;
+      padding: 0 14px;
+      outline: none;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      color: var(--ink);
+      background: #fcfaf6;
+      font-size: 0.84rem;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
     }
-    .feature-list{
-      list-style: none;
-      padding: 0;
-      margin: 0 0 14px;
-    }
-    .feature-list li{
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border);
-      font-size: 15px;
-    }
-    .feature-list li:last-child{ border-bottom: none; }
 
-    /* Values */
-    .values-grid{
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+    .field input:focus,
+    .field select:focus {
+      border-color: var(--moss);
+      box-shadow: 0 0 0 3px rgba(66, 111, 85, 0.1);
     }
-    .value-card{
-      background: var(--bg-alt);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 18px;
+
+    .submit-button {
+      width: 100%;
+      margin-top: 20px;
+      background: var(--forest);
+      color: var(--white);
     }
-    .value-card h4{
-      margin: 0 0 6px;
-      font-size: 16.5px;
+
+    .submit-button:hover {
+      background: var(--moss);
+      transform: translateY(-3px);
     }
-    .value-card p{
-      margin: 0;
-      font-size: 14px;
-      color: var(--text-muted);
+
+    .form-note {
+      margin-top: 15px;
+      color: rgba(23, 52, 47, 0.52);
+      font-size: 0.72rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* Quote */
+    .quote-section {
+      position: relative;
+      padding: 140px 0;
+      overflow: hidden;
+      color: var(--white);
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 55%, rgba(167, 187, 157, 0.22), transparent 33%),
+        linear-gradient(135deg, #103a32, #092720);
+    }
+
+    .quote-section::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: min(67vw, 900px);
+      aspect-ratio: 1;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      content: "";
+      transform: translate(-50%, -50%);
+    }
+
+    .quote-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 870px;
+      margin: 0 auto;
+    }
+
+    .quote-symbol {
+      display: block;
+      margin-bottom: 20px;
+      color: var(--gold);
+      font-family: "Playfair Display", serif;
+      font-size: 5.5rem;
+      line-height: 0.55;
+    }
+
+    blockquote {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2rem, 4.3vw, 4.2rem);
+      font-style: italic;
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      line-height: 1.08;
+    }
+
+    .quote-author {
+      display: block;
+      margin-top: 30px;
+      color: var(--sage);
+      font-family: "DM Mono", monospace;
+      font-size: 0.69rem;
+      font-style: normal;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
     /* Footer */
-    footer{
-      background: var(--bg-alt);
-      border-top: 1px solid var(--border);
-      padding: 36px 0 50px;
+    footer {
+      padding: 76px 0 25px;
+      color: var(--white);
+      background: #061d18;
     }
-    .footer-grid{
+
+    .footer-top {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr 0.8fr;
-      gap: 28px;
+      grid-template-columns: 1.5fr 0.8fr 0.8fr 1fr;
+      gap: 38px;
+      padding-bottom: 55px;
     }
-    .footer-col h5{
-      margin: 0 0 10px;
-      font-size: 14.5px;
-      letter-spacing: 0.3px;
+
+    .footer-brand .logo {
+      margin-bottom: 18px;
+    }
+
+    .footer-brand p {
+      max-width: 275px;
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 0.82rem;
+      line-height: 1.8;
+    }
+
+    .footer-title {
+      margin: 7px 0 18px;
+      color: var(--sage);
+      font-family: "DM Mono", monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
-      color: var(--text-muted);
     }
-    .footer-col ul{
+
+    .footer-links {
+      display: grid;
+      gap: 11px;
       list-style: none;
-      padding: 0;
-      margin: 0;
     }
-    .footer-col li{
-      margin-bottom: 8px;
-      font-size: 14.5px;
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.82rem;
+      transition: color 0.2s ease;
     }
-    .copyright{
-      margin-top: 26px;
-      font-size: 13.5px;
-      color: var(--text-muted);
+
+    .footer-links a:hover {
+      color: var(--sage);
+    }
+
+    .contact-line {
+      display: block;
+      margin-bottom: 11px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 0.81rem;
+      line-height: 1.65;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.44);
+      font-family: "DM Mono", monospace;
+      font-size: 0.64rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* Floating button */
+    .whatsapp-button {
+      position: fixed;
+      z-index: 40;
+      right: 25px;
+      bottom: 25px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 18px;
+      border-radius: 30px;
+      color: var(--white);
+      background: #1e7456;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.22);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      transition: transform 0.25s ease, background 0.25s ease;
+    }
+
+    .whatsapp-button:hover {
+      background: #248966;
+      transform: translateY(-4px);
+    }
+
+    .whatsapp-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #c2e7bc;
+      box-shadow: 0 0 0 5px rgba(194, 231, 188, 0.16);
     }
 
     /* Responsive */
-    @media (max-width: 980px){
-      .hero-inner{ grid-template-columns: 1fr; }
-      .about-grid{ grid-template-columns: 1fr; }
-      .portfolio-grid{ grid-template-columns: 1fr 1fr; }
-      .student-grid{ grid-template-columns: 1fr; }
-      .values-grid{ grid-template-columns: 1fr 1fr; }
-      .footer-grid{ grid-template-columns: 1fr 1fr; }
+    @media (max-width: 920px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .menu-button {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .hero {
+        min-height: 760px;
+      }
+
+      .hero-content,
+      .about-grid,
+      .booking-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        gap: 35px;
+      }
+
+      .hero-side-note {
+        max-width: 360px;
+      }
+
+      .hero-scroll {
+        display: none;
+      }
+
+      .about-art {
+        max-width: 540px;
+      }
+
+      .experience-card:nth-child(1),
+      .experience-card:nth-child(2),
+      .experience-card:nth-child(3) {
+        grid-column: span 4;
+      }
+
+      .footer-top {
+        grid-template-columns: 1.3fr 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
     }
-    @media (max-width: 640px){
-      .hero h1{ font-size: 32px; }
-      nav ul{ gap: 14px; }
-      .portfolio-grid{ grid-template-columns: 1fr; }
-      .values-grid{ grid-template-columns: 1fr; }
-      .footer-grid{ grid-template-columns: 1fr; }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 34px, 1180px);
+      }
+
+      .nav {
+        min-height: 76px;
+      }
+
+      .hero {
+        min-height: 720px;
+        padding-top: 120px;
+        padding-bottom: 45px;
+      }
+
+      .hero-orb {
+        top: 8%;
+        right: -23%;
+        width: 86vw;
+      }
+
+      .hero-leaf {
+        top: 12%;
+        right: -34%;
+        opacity: 0.65;
+      }
+
+      .hero-title {
+        font-size: clamp(3.3rem, 16vw, 5rem);
+      }
+
+      .hero-description {
+        font-size: 0.91rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat {
+        min-height: 135px;
+        padding: 26px 20px;
+        border-bottom: 1px solid rgba(23, 52, 47, 0.14);
+      }
+
+      .stat:nth-child(2) {
+        border-right: none;
+      }
+
+      .stat:nth-child(3),
+      .stat:nth-child(4) {
+        border-bottom: none;
+      }
+
+      .about,
+      .experiences,
+      .booking,
+      .quote-section {
+        padding: 95px 0;
+      }
+
+      .about-art {
+        min-height: 425px;
+      }
+
+      .about-art::before {
+        top: 50px;
+        width: 210px;
+        height: 320px;
+      }
+
+      .experiences-head {
+        display: block;
+        margin-bottom: 35px;
+      }
+
+      .experiences-intro {
+        margin-top: 22px;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-card:nth-child(1),
+      .experience-card:nth-child(2),
+      .experience-card:nth-child(3) {
+        grid-column: auto;
+        min-height: 390px;
+      }
+
+      .booking-form {
+        padding: 25px 20px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 22px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .whatsapp-button {
+        right: 16px;
+        bottom: 16px;
+        min-height: 47px;
+        padding: 0 14px;
+      }
     }
   </style>
 </head>
-<body>
 
-  <header>
+<body>
+  <header class="site-header">
     <div class="container nav">
-      <a href="#" class="logo">Bilvaya<span>Hospitality</span></a>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#students">Student Hospitality</a></li>
-          <li><a href="#values">Values</a></li>
+      <a href="#home" class="logo" aria-label="Bilvaya Hospitality Home">
+        <span class="brand-mark" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        Bilvaya
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#story">Our Story</a></li>
+          <li><a href="#experiences">Experiences</a></li>
+          <li><a href="#stay">Stay With Us</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <a href="#contact" class="btn">Partner with us</a>
+
+      <a class="nav-cta" href="#stay">Make an Enquiry</a>
+
+      <button class="menu-button" type="button" aria-label="Open navigation menu">
+        ☰
+      </button>
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container hero-inner">
-      <div>
-        <h1>Bilvaya Hospitality</h1>
-        <p>
-          A growing hospitality group focused on resorts, hotels and student housing. We combine operational discipline with warm, human service to create stays that feel effortless for guests and partners.
-        </p>
-        <div class="hero-actions">
-          <a href="#portfolio" class="btn">Explore our portfolio</a>
-          <a href="#students" class="btn btn-outline">Student hospitality</a>
-        </div>
-      </div>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-orb"></div>
+      <div class="hero-leaf"></div>
 
-      <div class="hero-card">
-        <h3>What we do</h3>
-        <p>We design, operate and partner on hospitality assets that balance strong unit economics with outstanding guest experience.</p>
-        <div class="mini-grid">
-          <div class="mini-card">
-            <strong>Resorts</strong>
-            Leisure properties with focus on design, F&amp;B and experiences.
-          </div>
-          <div class="mini-card">
-            <strong>Hotels</strong>
-            City and highway hotels built for consistent, reliable stays.
-          </div>
-          <div class="mini-card">
-            <strong>Student housing</strong>
-            Safe, affordable and well managed living spaces for students.
-          </div>
-          <div class="mini-card">
-            <strong>Management</strong>
-            End to end operations, branding and revenue management.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About Bilvaya Hospitality</h2>
-      <p class="section-sub">
-        We are a hospitality group building a multi brand portfolio across resorts, hotels and student focused living. Our approach blends data driven operations with a simple promise: make every stay smooth, safe and memorable.
-      </p>
-
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            Bilvaya Hospitality works with owners, investors and institutions to unlock the full potential of their assets. We focus on clear brand positioning, disciplined cost control and service standards that guests notice.
-          </p>
-          <p>
-            Our teams handle everything from concept and design to day to day operations, sales and revenue management. This allows property owners to benefit from professional management while we focus on long term performance.
-          </p>
-          <p>
-            With a presence across key demand centers, we are building a platform that can scale without losing the personal touch that defines good hospitality.
-          </p>
-        </div>
-
-        <div class="stat-grid">
-          <div class="stat-card">
-            <strong>Multi segment</strong>
-            <span>Resorts, hotels and student housing under one platform.</span>
-          </div>
-          <div class="stat-card">
-            <strong>End to end</strong>
-            <span>From concept and branding to daily operations and sales.</span>
-          </div>
-          <div class="stat-card">
-            <strong>Owner focused</strong>
-            <span>Transparent reporting and a clear focus on asset returns.</span>
-          </div>
-          <div class="stat-card">
-            <strong>Standards driven</strong>
-            <span>Documented SOPs, training and regular quality audits.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="portfolio">
-    <div class="container">
-      <h2 class="section-title">Our portfolio</h2>
-      <p class="section-sub">
-        We operate and partner on a range of properties across leisure and city markets. Each brand is designed for a specific guest segment and price point, with a strong focus on repeat business.
-      </p>
-
-      <div class="portfolio-grid">
-        <div class="card">
-          <h3>Bilvaya Resorts</h3>
-          <p>
-            Leisure properties positioned around nature, culture and relaxed luxury. Our resorts emphasize spacious rooms, thoughtful F&amp;B and curated local experiences.
-          </p>
-          <div class="tags">
-            <span class="tag">Leisure</span>
-            <span class="tag">F&amp;B led</span>
-            <span class="tag">Experiences</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Bilvaya Hotels</h3>
-          <p>
-            City and highway hotels built for business and family travel. Clean rooms, reliable service and smart pricing drive strong occupancy and guest satisfaction.
-          </p>
-          <div class="tags">
-            <span class="tag">Business</span>
-            <span class="tag">City</span>
-            <span class="tag">Highway</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Bilvaya Student Living</h3>
-          <p>
-            Purpose built and managed student housing close to campuses. Secure access, study friendly spaces and community focused programming for a better student experience.
-          </p>
-          <div class="tags">
-            <span class="tag">Student housing</span>
-            <span class="tag">Safety</span>
-            <span class="tag">Community</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="students">
-    <div class="container">
-      <h2 class="section-title">Student hospitality</h2>
-      <p class="section-sub">
-        We treat student housing as a core hospitality vertical, not an afterthought. Our properties are designed to support academic success, safety and a sense of community.
-      </p>
-
-      <div class="student-grid">
+      <div class="container hero-content">
         <div>
-          <h3 style="margin-top:0;">How we approach student living</h3>
-          <p>
-            Bilvaya Student Living combines secure, well maintained accommodation with services that matter to students and parents. We work with educational institutions, developers and investors to create housing that is both affordable and well run.
+          <div class="eyebrow">Bilvaya Hospitality · India</div>
+
+          <h1 class="hero-title">
+            Places that make<br />
+            life feel <em>richer.</em>
+          </h1>
+
+          <p class="hero-description">
+            Bilvaya creates distinct spaces for rest, connection and belonging—
+            from soulful hotels and nature-led resorts to vibrant student cafés
+            and thoughtfully managed residences.
           </p>
-          <p>
-            Our model focuses on location, safety, reliable utilities and responsive on ground teams. We also invest in common areas that encourage peer learning and healthy routines.
-          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#experiences">
+              Explore Bilvaya <span class="arrow">→</span>
+            </a>
+            <a class="button button-outline" href="#stay">
+              Plan your stay
+            </a>
+          </div>
         </div>
 
-        <div class="card">
-          <h3 style="margin-top:0;">Key features</h3>
-          <ul class="feature-list">
-            <li>Secure access with controlled entry and on site staff</li>
-            <li>Furnished rooms with study tables, storage and high speed internet</li>
-            <li>Common kitchens, lounges and laundry facilities</li>
-            <li>Regular housekeeping and preventive maintenance</li>
-            <li>Community events, wellness activities and peer support</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline" style="width:100%; text-align:center;">Discuss a student housing project</a>
+        <aside class="hero-side-note">
+          <span class="number">01</span>
+          <p>
+            Every Bilvaya address begins with one question: how should this
+            place make people feel?
+          </p>
+        </aside>
+      </div>
+
+      <div class="hero-scroll">Scroll to discover</div>
+    </section>
+
+    <section class="stats" aria-label="Bilvaya at a glance">
+      <div class="container stats-grid">
+        <div class="stat">
+          <span class="stat-number">04</span>
+          <span class="stat-label">Hospitality formats</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">01</span>
+          <span class="stat-label">Shared philosophy</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">∞</span>
+          <span class="stat-label">Moments to remember</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Care in every detail</span>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="values">
-    <div class="container">
-      <h2 class="section-title">Our values</h2>
-      <p class="section-sub">
-        We keep our culture simple and practical. These values guide how we hire, train and run our properties every day.
-      </p>
+    <section class="about" id="story">
+      <div class="container about-grid">
+        <div class="about-art" aria-label="Abstract Bilvaya hospitality artwork">
+          <div class="art-frame"></div>
+          <div class="art-label">Rooted in warmth.</div>
+        </div>
 
-      <div class="values-grid">
-        <div class="value-card">
-          <h4>Guest first</h4>
-          <p>
-            Every decision starts with the guest experience. We remove friction, fix problems quickly and reward teams that create loyal guests.
+        <div class="about-text">
+          <div class="eyebrow">The Bilvaya way</div>
+
+          <h2 class="section-heading">
+            Not just places to visit.<br />
+            Places to <em>belong.</em>
+          </h2>
+
+          <p class="section-copy">
+            We believe hospitality is not a service—it is a feeling. Bilvaya
+            brings together design, comfort, local character and genuine human
+            care to create addresses that stay with you long after you leave.
           </p>
-        </div>
-        <div class="value-card">
-          <h4>Ownership mindset</h4>
-          <p>
-            We run each property as if it were our own asset. That means caring about costs, quality and long term reputation, not just short term numbers.
+
+          <p class="section-copy" style="margin-top: 17px;">
+            Whether it is a weekend escape, an everyday coffee ritual, a
+            student’s first independent home, or a longer residential stay,
+            every Bilvaya space is designed around meaningful living.
           </p>
-        </div>
-        <div class="value-card">
-          <h4>Standards and trust</h4>
-          <p>
-            Clear SOPs, honest reporting and consistent behavior build trust with guests, owners and our own people.
-          </p>
+
+          <div class="signature">
+            <div class="signature-mark">B</div>
+            <div class="signature-copy">
+              <strong>Built with intention</strong>
+              <span>Comfort, culture and connection in balance.</span>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Partner with Bilvaya Hospitality</h2>
-      <p class="section-sub">
-        We work with property owners, investors, educational institutions and developers on new and existing hospitality assets. If you are exploring a resort, hotel or student housing project, we would be glad to discuss how we can help.
-      </p>
+    <section class="experiences" id="experiences">
+      <div class="container">
+        <div class="experiences-head">
+          <div>
+            <div class="eyebrow">One brand, many ways to belong</div>
+            <h2 class="section-heading">
+              Discover your<br /><em>Bilvaya.</em>
+            </h2>
+          </div>
 
-      <div class="card" style="max-width: 720px;">
-        <h3 style="margin-top:0;">Get in touch</h3>
-        <p>
-          Share a few details about your property or project and our team will reach out to explore fit and next steps.
-        </p>
+          <p class="experiences-intro">
+            Each Bilvaya experience has its own rhythm, personality and purpose—
+            united by thoughtful design and heartfelt hospitality.
+          </p>
+        </div>
 
-        <form
-          action="https://formsubmit.co/your-email@example.com"
-          method="POST"
-          style="display:grid; gap:12px; margin-top:14px;"
-        >
-          <!-- Replace your-email@example.com with your actual email address -->
-          <input
-            type="text"
-            name="name"
-            placeholder="Your name"
-            required
-            style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px; font-size:15px;"
-          >
-          <input
-            type="text"
-            name="organization"
-            placeholder="Organization or company"
-            style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px; font-size:15px;"
-          >
-          <input
-            type="email"
-            name="email"
-            placeholder="Email address"
-            required
-            style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px; font-size:15px;"
-          >
-          <textarea
-            name="message"
-            placeholder="Tell us about your property or project"
-            rows="5"
-            required
-            style="width:100%; padding:10px 12px; border:1px solid var(--border); border-radius:8px; font-size:15px; resize:vertical;"
-          ></textarea>
+        <div class="experience-grid">
+          <article class="experience-card">
+            <span class="experience-index">01 / STAY</span>
+            <div class="experience-content">
+              <span class="experience-type">Hotels & Boutique Stays</span>
+              <h3>Bilvaya Hotels</h3>
+              <p>
+                Refined, restful and deeply connected to the destination around
+                you.
+              </p>
+              <a class="experience-link" href="#stay">
+                Discover stays <span class="arrow">→</span>
+              </a>
+            </div>
+          </article>
 
-          <!-- FormSubmit settings (optional) -->
-          <input type="hidden" name="_subject" value="New Bilvaya Hospitality inquiry">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">
-          <!-- Replace https://yourdomain.com/thanks.html with your actual thank you page or remove this line -->
+          <article class="experience-card">
+            <span class="experience-index">02 / ESCAPE</span>
+            <div class="experience-content">
+              <span class="experience-type">Nature & Leisure</span>
+              <h3>Bilvaya Resorts</h3>
+              <p>
+                Slow mornings, open skies and restorative moments in nature.
+              </p>
+              <a class="experience-link" href="#stay">
+                Explore resorts <span class="arrow">→</span>
+              </a>
+            </div>
+          </article>
 
-          <button type="submit" class="btn" style="border:none; cursor:pointer;">Send inquiry</button>
+          <article class="experience-card">
+            <span class="experience-index">03 / GATHER</span>
+            <div class="experience-content">
+              <span class="experience-type">Cafés & Community</span>
+              <h3>Bilvaya Café</h3>
+              <p>
+                A familiar table for students, creators, conversations and good
+                coffee.
+              </p>
+              <a class="experience-link" href="#contact">
+                Find your table <span class="arrow">→</span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking" id="stay">
+      <div class="container booking-grid">
+        <div>
+          <div class="eyebrow">Start your Bilvaya story</div>
+          <h2 class="section-heading">
+            A stay that feels<br />
+            like it was <em>meant</em><br />
+            for you.
+          </h2>
+          <p class="section-copy">
+            Tell us what you are looking for. Our hospitality team will help
+            you find the right Bilvaya experience—whether for travel, leisure,
+            residence, celebration or student life.
+          </p>
+        </div>
+
+        <form class="booking-form" id="enquiryForm">
+          <h3 class="form-title">Plan your experience</h3>
+
+          <div class="form-grid">
+            <div class="field full">
+              <label for="experience">I am interested in</label>
+              <select id="experience" required>
+                <option value="">Choose an experience</option>
+                <option>Bilvaya Hotels</option>
+                <option>Bilvaya Resorts</option>
+                <option>Bilvaya Student Café</option>
+                <option>Bilvaya Residences</option>
+                <option>Events & Celebrations</option>
+                <option>Business Partnership</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="name">Your name</label>
+              <input id="name" type="text" placeholder="Full name" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone number</label>
+              <input id="phone" type="tel" placeholder="+91" required />
+            </div>
+
+            <div class="field">
+              <label for="date">Preferred date</label>
+              <input id="date" type="date" />
+            </div>
+
+            <div class="field">
+              <label for="guests">Guests / residents</label>
+              <select id="guests">
+                <option>1 Person</option>
+                <option>2 People</option>
+                <option>3–5 People</option>
+                <option>6–10 People</option>
+                <option>More than 10</option>
+              </select>
+            </div>
+          </div>
+
+          <button class="button submit-button" type="submit">
+            Send enquiry <span class="arrow">→</span>
+          </button>
+
+          <p class="form-note">
+            Our team will respond shortly with the best available options.
+          </p>
         </form>
-
-        <p style="font-size:13px; color:var(--text-muted); margin-top:10px;">
-          This form uses a simple backend service. Replace the example email and next URL with your own details before going live.
-        </p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <div class="container footer-grid">
-      <div class="footer-col">
-        <h5>Bilvaya Hospitality</h5>
-        <p style="margin:0; font-size:14.5px; color:var(--text-muted);">
-          Resorts, hotels and student hospitality managed with a focus on service, safety and sustainable returns.
-        </p>
+    <section class="quote-section">
+      <div class="quote-inner container">
+        <span class="quote-symbol">“</span>
+        <blockquote>
+          The finest hospitality does not simply welcome you in.
+          It gives you a reason to return.
+        </blockquote>
+        <span class="quote-author">— The Bilvaya Philosophy</span>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="logo">
+            <span class="brand-mark" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </span>
+            Bilvaya
+          </a>
+          <p>
+            Thoughtfully crafted hotels, resorts, cafés and residences for a
+            more meaningful way to stay, gather and live.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#experiences">Hotels & Resorts</a></li>
+            <li><a href="#experiences">Student Cafés</a></li>
+            <li><a href="#experiences">Residences</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="#stay">Make an Enquiry</a></li>
+            <li><a href="#contact">Partner With Us</a></li>
+            <li><a href="#contact">Careers</a></li>
+            <li><a href="#contact">Press & Media</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <a class="contact-line" href="tel:+919000000000">+91 90000 00000</a>
+          <a class="contact-line" href="mailto:hello@bilvaya.com">
+            hello@bilvaya.com
+          </a>
+          <span class="contact-line">
+            Maharashtra, India<br />
+            Expanding thoughtfully.
+          </span>
+        </div>
       </div>
 
-      <div class="footer-col">
-        <h5>Navigation</h5>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#students">Student hospitality</a></li>
-          <li><a href="#values">Values</a></li>
-        </ul>
+      <div class="footer-bottom">
+        <span>© 2026 Bilvaya Hospitality. All rights reserved.</span>
+        <span>Stay beyond ordinary.</span>
       </div>
-
-      <div class="footer-col">
-        <h5>Business</h5>
-        <ul>
-          <li><a href="#contact">Partner with us</a></li>
-          <li><a href="#contact">Project inquiry</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="container copyright">
-      © <span id="year"></span> Bilvaya Hospitality. All rights reserved.
     </div>
   </footer>
 
+  <a
+    class="whatsapp-button"
+    href="https://wa.me/919000000000"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with Bilvaya Hospitality on WhatsApp"
+  >
+    <span class="whatsapp-dot"></span>
+    Chat with Bilvaya
+  </a>
+
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById("enquiryForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const experience = document.getElementById("experience").value;
+
+      if (name && experience) {
+        alert(
+          "Thank you, " +
+          name +
+          "! Your enquiry for " +
+          experience +
+          " has been received. The Bilvaya team will contact you shortly."
+        );
+        this.reset();
+      }
+    });
   </script>
 </body>
 </html>
