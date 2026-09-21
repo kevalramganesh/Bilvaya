@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Portfolio | Bilvaya Hospitality</title>
+<meta name="description" content="A curated portfolio of Bilvaya resorts, cafes, student residences, and restaurants across India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="./index.html" aria-label="Bilvaya Hospitality, home">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 4 C 12 10, 8 18, 20 36 C 32 18, 28 10, 20 4 Z" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M20 8 L 20 34" stroke="currentColor" stroke-width="1"/>
+        <path d="M20 16 C 16 17, 14 19, 13 22" stroke="currentColor" stroke-width="1"/>
+        <path d="M20 16 C 24 17, 26 19, 27 22" stroke="currentColor" stroke-width="1"/>
+      </svg>
+      <span class="brand-name">Bilvaya <em>Hospitality</em></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="./index.html">Home</a>
+      <a href="./portfolio.html" class="is-active">Portfolio</a>
+      <a href="./about.html">About</a>
+      <a href="./journal.html">Journal</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" data-theme-toggle type="button" aria-label="Toggle theme"></button>
+      <a class="btn btn-primary" href="./contact.html">Get in touch</a>
+      <button class="icon-btn menu-btn" data-menu-open type="button" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" role="dialog" aria-label="Site menu">
+  <div class="mobile-nav-header">
+    <span class="brand-name">Bilvaya</span>
+    <button class="icon-btn" data-menu-close type="button" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <ul>
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./portfolio.html">Portfolio</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./journal.html">Journal</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Portfolio</span>
+      <h1>Fourteen places, four <em>disciplines</em>.</h1>
+      <p class="page-hero-lede">A working list of the properties we design, build, and operate. Each project starts with a site and a question, what does this room want to become?</p>
+    </div>
+  </section>
+
+  <section id="resorts" aria-labelledby="resorts-title">
+    <div class="container">
+      <div class="section-intro reveal">
+        <div>
+          <span class="eyebrow">01 · Resorts</span>
+          <h2 id="resorts-title">Resorts <em>&amp; Retreats</em></h2>
+        </div>
+        <p>Boutique properties built for the long weekend and the slower week. Twelve to forty keys, generous verandahs, and kitchens with a point of view.</p>
+      </div>
+
+      <div class="portfolio">
+        <article class="portfolio-card reveal">
+          <div class="portfolio-media"><img src="./assets/hero-resort.png" alt="Infinity pool overlooking a valley at sunset" loading="lazy"></div>
+          <div class="portfolio-body">
+            <h3>Aranya, Coorg</h3>
+            <p>A 22-key hillside retreat above the Kaveri, built around a single banyan, three spring-fed pools, and a working coffee estate.</p>
+            <ul><li>22 keys</li><li>Open 2019</li><li>Karnataka</li></ul>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-media"><img src="./assets/philosophy.png" alt="Terracotta roofs among tropical greenery at dawn" loading="lazy"></div>
+          <div class="portfolio-body">
+            <h3>Kavya House, Alleppey</h3>
+            <p>An eight-room heritage villa on a private stretch of backwater, restored in lime plaster, rosewood, and hand-thrown terracotta tile.</p>
+            <ul><li>8 keys</li><li>Open 2021</li><li>Kerala</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="cafes" style="background:var(--color-surface-offset)" aria-labelledby="cafes-title">
+    <div class="container">
+      <div class="section-intro reveal">
+        <div>
+          <span class="eyebrow">02 · Cafes</span>
+          <h2 id="cafes-title">Cafes <em>&amp; Bakeries</em></h2>
+        </div>
+        <p>Neighbourhood rooms built around a single espresso bar, a daily bread programme, and a set of chairs worth staying an hour in.</p>
+      </div>
+
+      <div class="portfolio">
+        <article class="portfolio-card reveal">
+          <div class="portfolio-media"><img src="./assets/cafe.png" alt="Cafe interior with warm light and terracotta espresso machine" loading="lazy"></div>
+          <div class="portfolio-body">
+            <h3>Terra &amp; Co., Bengaluru</h3>
+            <p>Speciality coffee, sourdough, and slow breakfasts in a quiet lane off 12th Main. Beans roasted weekly in-house.</p>
+            <ul><li>42 seats</li><li>Open 2020</li><li>Indiranagar</li></ul>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-media"><img src="./assets/cafe.png" alt="Cafe with rustic linen counter" loading="lazy"></div>
+          <div class="portfolio-body">
+            <h3>Terra &amp; Co., Kochi</h3>
+            <p>A second Terra, in a restored spice warehouse in Mattancherry, with a wood-fired oven and a small library upstairs.</p>
+            <ul><li>36 seats</li><li>Open 2023</li><li>Fort Kochi</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="residences" aria-labelledby="residences-title">
+    <div class="container">
+      <div class="section-intro reveal">
+        <div>
+          <span class="eyebrow">03 · Residences</span>
+          <h2 id="residences-title">Student <em>Residences</em></h2>
+        </div>
+        <p>Purpose-built homes for students, safe, social, and dignified. Twin and single rooms, three daily meals, a proper library, and rooftops made for staying up late.</p>
+      </div>
+
+      <div class="portfolio">
+        <article class="portfolio-card reveal">
+          <div class="portfolio-media"><img src="./assets/residence.png" alt="Warm student residence common room" loading="lazy"></div>
+          <div class="portfolio-body">
+            <h3>Study Hall, Pune</h3>
+            <p>A 180-bed residence next to Symbiosis, with a fifty-seat dining hall, a two-storey library, and a rooftop garden overlooking the hills.</p>
+            <ul><li>180 beds</li><li>Open 2022</li><li>Lavale</li></ul>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-media"><img src="./assets/residence.png" alt="Communal residence interior with tall windows" loading="lazy"></div>
+          <div class="portfolio-body">
+            <h3>Study Hall, Bengaluru</h3>
+            <p>A 240-bed residence in Whitefield with a music room, laundry service, and a common kitchen for the students who cook.</p>
+            <ul><li>240 beds</li><li>Open 2024</li><li>Whitefield</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="restaurants" style="background:var(--color-surface-offset)" aria-labelledby="restaurants-title">
+    <div class="container">
+      <div class="section-intro reveal">
+        <div>
+          <span class="eyebrow">04 · Restaurants</span>
+          <h2 id="restaurants-title">Restaurants <em>&amp; Bars</em></h2>
+        </div>
+        <p>Rooms with a clear point of view. Chef-led kitchens, seasonal menus, and a bar that pours with intention rather than volume.</p>
+      </div>
+
+      <div class="portfolio">
+        <article class="portfolio-card reveal">
+          <div class="portfolio-media"><img src="./assets/restaurant.png" alt="Warm chef counter at dusk" loading="lazy"></div>
+          <div class="portfolio-body">
+            <h3>Firewood, Mumbai</h3>
+            <p>A twelve-seat chef counter, a wood-fired hearth, and a menu that changes with the market. Reservations open on the 1st of each month.</p>
+            <ul><li>28 seats</li><li>Open 2022</li><li>Bandra West</li></ul>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-media"><img src="./assets/craft.png" alt="Chef plating a dish with tweezers" loading="lazy"></div>
+          <div class="portfolio-body">
+            <h3>Kaveri, Coorg</h3>
+            <p>The all-day restaurant at Aranya, open to non-residents. A short seasonal menu built almost entirely from within a fifty-kilometre radius.</p>
+            <ul><li>60 seats</li><li>Open 2019</li><li>At Aranya</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Get in touch">
+    <div class="container">
+      <div class="cta-band reveal">
+        <div>
+          <span class="eyebrow" style="color:rgba(245,241,232,.78)">Work with us</span>
+          <h2>Have a site or a lease we <em>should see?</em></h2>
+          <p>We are selective about new projects and generous with our time. Send us the shape of what you have in mind.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="./contact.html" class="btn btn-primary">Start a conversation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./index.html" aria-label="Bilvaya Hospitality, home">
+          <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 4 C 12 10, 8 18, 20 36 C 32 18, 28 10, 20 4 Z" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M20 8 L 20 34" stroke="currentColor" stroke-width="1"/>
+          </svg>
+          <span class="brand-name">Bilvaya <em>Hospitality</em></span>
+        </a>
+        <p>Resorts, cafes, student residences, and restaurants, designed and operated with quiet conviction, since 2016.</p>
+      </div>
+      <div class="footer-col"><h5>Portfolio</h5><ul>
+        <li><a href="./portfolio.html#resorts">Resorts</a></li>
+        <li><a href="./portfolio.html#cafes">Cafes</a></li>
+        <li><a href="./portfolio.html#residences">Student residences</a></li>
+        <li><a href="./portfolio.html#restaurants">Restaurants</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Studio</h5><ul>
+        <li><a href="./about.html">About Bilvaya</a></li>
+        <li><a href="./journal.html">Journal</a></li>
+        <li><a href="./contact.html#careers">Careers</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Get in touch</h5><ul>
+        <li><a href="./contact.html">General enquiries</a></li>
+        <li><a href="./contact.html#partner">Partnership</a></li>
+        <li><a href="./contact.html#press">Press</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 Bilvaya Hospitality Pvt. Ltd.</span>
+      
+    </div>
+  </div>
+</footer>
+
+<script src="./app.js" defer></script>
+</body>
+</html>

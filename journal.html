@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Journal | Bilvaya Hospitality</title>
+<meta name="description" content="Field notes from the Bilvaya studio: design, food, service, and the odd travel piece.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<a class="sr-only" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="./index.html" aria-label="Bilvaya Hospitality, home">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 4 C 12 10, 8 18, 20 36 C 32 18, 28 10, 20 4 Z" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M20 8 L 20 34" stroke="currentColor" stroke-width="1"/>
+      </svg>
+      <span class="brand-name">Bilvaya <em>Hospitality</em></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="./index.html">Home</a>
+      <a href="./portfolio.html">Portfolio</a>
+      <a href="./about.html">About</a>
+      <a href="./journal.html" class="is-active">Journal</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" data-theme-toggle type="button" aria-label="Toggle theme"></button>
+      <a class="btn btn-primary" href="./contact.html">Get in touch</a>
+      <button class="icon-btn menu-btn" data-menu-open type="button" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" role="dialog" aria-label="Site menu">
+  <div class="mobile-nav-header">
+    <span class="brand-name">Bilvaya</span>
+    <button class="icon-btn" data-menu-close type="button" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <ul>
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./portfolio.html">Portfolio</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./journal.html">Journal</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Journal</span>
+      <h1>Field notes from <em>the studio.</em></h1>
+      <p class="page-hero-lede">Design references, recipes, opening reports, and the occasional travel diary. Updated when there is something worth writing down.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="portfolio">
+        <article class="portfolio-card reveal">
+          <div class="portfolio-media"><img src="./assets/philosophy.png" alt="Terracotta roofs at dawn" loading="lazy"></div>
+          <div class="portfolio-body">
+            <ul><li>Field note</li><li>March 2026</li></ul>
+            <h3>What we learned opening a resort in the monsoon</h3>
+            <p>Six weeks of rain during the soft-open changed a lot of our operating assumptions. Notes on drainage, laundry, and the value of a covered walkway.</p>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-media"><img src="./assets/cafe.png" alt="Cafe interior in warm light" loading="lazy"></div>
+          <div class="portfolio-body">
+            <ul><li>Craft</li><li>January 2026</li></ul>
+            <h3>The Terra bake, in detail</h3>
+            <p>Our head baker on the sourdough programme: hydration, timing, and the twenty-four hour fridge cycle that made the loaf work in Bengaluru's climate.</p>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-media"><img src="./assets/residence.png" alt="Student residence common room" loading="lazy"></div>
+          <div class="portfolio-body">
+            <ul><li>Studio</li><li>November 2025</li></ul>
+            <h3>Designing student residences that are not sad</h3>
+            <p>Notes from three years of Study Hall: how a common room, a kitchen, and a laundry line change what a student building actually feels like.</p>
+          </div>
+        </article>
+        <article class="portfolio-card reveal">
+          <div class="portfolio-media"><img src="./assets/craft.png" alt="Chef plating a dish" loading="lazy"></div>
+          <div class="portfolio-body">
+            <ul><li>Kitchen</li><li>September 2025</li></ul>
+            <h3>A season on the hearth at Firewood</h3>
+            <p>Six months of a wood-fired kitchen, from menu design to ash management. What we changed after month three.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--color-surface-offset)">
+    <div class="container">
+      <div class="cta-band reveal">
+        <div>
+          <span class="eyebrow" style="color:rgba(245,241,232,.78)">Subscribe</span>
+          <h2>A short letter, <em>every quarter.</em></h2>
+          <p>Openings, hires, journal pieces, and the occasional recipe. Four times a year, never more.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="./contact.html" class="btn btn-primary">Subscribe by email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./index.html" aria-label="Bilvaya Hospitality, home">
+          <svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><path d="M20 4 C 12 10, 8 18, 20 36 C 32 18, 28 10, 20 4 Z" stroke="currentColor" stroke-width="1.4"/><path d="M20 8 L 20 34" stroke="currentColor" stroke-width="1"/></svg>
+          <span class="brand-name">Bilvaya <em>Hospitality</em></span>
+        </a>
+        <p>Resorts, cafes, student residences, and restaurants, designed and operated with quiet conviction, since 2016.</p>
+      </div>
+      <div class="footer-col"><h5>Portfolio</h5><ul>
+        <li><a href="./portfolio.html#resorts">Resorts</a></li>
+        <li><a href="./portfolio.html#cafes">Cafes</a></li>
+        <li><a href="./portfolio.html#residences">Student residences</a></li>
+        <li><a href="./portfolio.html#restaurants">Restaurants</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Studio</h5><ul>
+        <li><a href="./about.html">About Bilvaya</a></li>
+        <li><a href="./journal.html">Journal</a></li>
+        <li><a href="./contact.html#careers">Careers</a></li>
+      </ul></div>
+      <div class="footer-col"><h5>Get in touch</h5><ul>
+        <li><a href="./contact.html">General enquiries</a></li>
+        <li><a href="./contact.html#partner">Partnership</a></li>
+        <li><a href="./contact.html#press">Press</a></li>
+      </ul></div>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 Bilvaya Hospitality Pvt. Ltd.</span>
+      
+    </div>
+  </div>
+</footer>
+
+<script src="./app.js" defer></script>
+</body>
+</html>
