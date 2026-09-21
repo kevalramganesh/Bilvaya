@@ -1,106 +1,261 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#10231d" />
-  <title>Bilvaya Hospitality — Places with Presence</title>
-  <meta name="description" content="Bilvaya Hospitality creates considered hotels, resorts, restaurants, cafés and student residences." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&display=swap" rel="stylesheet">
-  <style>
-    :root{--ink:#14241e;--forest:#10231d;--moss:#315a45;--sage:#b7c6aa;--stone:#e8e3d7;--cream:#f7f3ea;--clay:#ba6f51;--line:rgba(20,36,30,.16);--serif:"Fraunces",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;--mono:"DM Mono",monospace}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);overflow-x:hidden} a{color:inherit;text-decoration:none} button{font:inherit}
-    .nav{position:fixed;z-index:20;top:0;left:0;width:100%;display:flex;align-items:center;justify-content:space-between;padding:25px 4.8%;color:#fff;transition:.4s ease}.nav.scrolled{background:rgba(247,243,234,.92);backdrop-filter:blur(16px);color:var(--ink);padding:15px 4.8%;box-shadow:0 1px 0 var(--line)}
-    .brand{display:flex;gap:10px;align-items:center;font-size:12px;letter-spacing:.16em;font-weight:600;text-transform:uppercase}.mark{width:24px;height:24px;border:1.5px solid currentColor;display:grid;place-items:center;border-radius:50%;position:relative}.mark:before,.mark:after{content:"";position:absolute;width:1px;height:17px;background:currentColor}.mark:before{transform:rotate(45deg)}.mark:after{transform:rotate(-45deg)}
-    .nav-links{display:flex;gap:30px;font-size:11px;letter-spacing:.12em;text-transform:uppercase}.nav-cta{border:1px solid currentColor;border-radius:40px;padding:10px 16px;font-size:11px;letter-spacing:.1em;text-transform:uppercase;transition:.25s}.nav-cta:hover{background:currentColor;color:var(--forest)}
-    .hero{min-height:100svh;background:var(--forest);color:#fff;position:relative;display:flex;align-items:flex-end;padding:0 4.8% 7.5%;overflow:hidden}.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,27,20,.48),transparent 60%),linear-gradient(0deg,rgba(8,27,20,.78),transparent 55%)}
-    .hero-art{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=2400&q=90');background-size:cover;background-position:center;transform:scale(1.04);animation:slowZoom 15s ease-in-out infinite alternate}@keyframes slowZoom{to{transform:scale(1.12)}}
-    .hero-copy{position:relative;z-index:1;max-width:900px}.eyebrow{font:500 10px var(--mono);letter-spacing:.16em;text-transform:uppercase;display:flex;gap:10px;align-items:center}.eyebrow:before{content:"";width:31px;height:1px;background:currentColor}.hero h1{font:400 clamp(4.2rem,9vw,10rem)/.88 var(--serif);letter-spacing:-.065em;margin:22px 0 30px}.hero-bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;max-width:1220px}.hero-bottom p{max-width:355px;margin:0;font-size:16px;line-height:1.55;color:rgba(255,255,255,.8)}.round-link{width:104px;height:104px;border-radius:50%;border:1px solid rgba(255,255,255,.65);display:grid;place-items:center;font:11px var(--mono);text-transform:uppercase;letter-spacing:.1em;text-align:center;transition:.3s}.round-link:hover{background:#fff;color:var(--forest);transform:rotate(-12deg)}
-    .marquee{background:var(--clay);color:#fff;overflow:hidden;white-space:nowrap;padding:14px 0}.marquee-track{display:inline-flex;gap:34px;align-items:center;animation:marquee 22s linear infinite;font:500 11px var(--mono);letter-spacing:.18em;text-transform:uppercase}.marquee i{font-size:16px;font-style:normal}@keyframes marquee{to{transform:translateX(-50%)}}
-    section{padding:130px 4.8%}.intro{display:grid;grid-template-columns:1fr 2fr;gap:8%;background:var(--cream)}.section-label{font:500 10px var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--moss);padding-top:12px;border-top:1px solid var(--ink)}.intro h2{font:400 clamp(2.6rem,5.3vw,5.3rem)/.98 var(--serif);letter-spacing:-.052em;margin:0;max-width:860px}.intro-text{margin:43px 0 0;max-width:440px;font-size:17px;line-height:1.55;color:#4b584f}.text-link{display:inline-flex;gap:14px;align-items:center;margin-top:38px;font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:8px}.text-link span{font-size:18px;line-height:10px}
-    .destinations{background:var(--stone)}.heading-row{display:flex;justify-content:space-between;align-items:end;margin-bottom:62px}.heading-row h2{font:400 clamp(3rem,5vw,5rem)/.9 var(--serif);letter-spacing:-.055em;margin:0}.heading-row p{max-width:270px;font-size:14px;line-height:1.5;color:#596158}
-    .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card{height:530px;position:relative;overflow:hidden;color:#fff;background:#283b32}.card:nth-child(2){margin-top:58px}.card:nth-child(4){margin-top:58px}.card img{width:100%;height:100%;object-fit:cover;filter:saturate(.74);transition:transform .8s cubic-bezier(.2,.7,.2,1)}.card:hover img{transform:scale(1.08)}.card::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,24,18,.85),transparent 60%)}.card-content{position:absolute;z-index:1;inset:auto 25px 25px}.card-num{font:10px var(--mono);letter-spacing:.1em}.card h3{font:400 2.1rem/.95 var(--serif);letter-spacing:-.04em;margin:13px 0 11px}.card p{font-size:12px;line-height:1.4;margin:0;color:rgba(255,255,255,.78)}
-    .statement{min-height:780px;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;background:var(--forest);color:#f4f0e8;overflow:hidden}.statement:before{content:"✦";position:absolute;top:6%;left:8%;font-size:110px;color:rgba(183,198,170,.14)}.statement:after{content:"";position:absolute;width:68vw;height:68vw;right:-24vw;bottom:-37vw;border:1px solid rgba(183,198,170,.25);border-radius:50%}.statement-inner{max-width:1040px;padding:50px;position:relative;z-index:1}.statement h2{font:400 clamp(3.2rem,7vw,7.8rem)/.91 var(--serif);letter-spacing:-.062em;margin:25px 0}.statement p{font-size:16px;line-height:1.55;color:rgba(255,255,255,.76);max-width:470px;margin:0 auto}.statement .eyebrow{justify-content:center}
-    .journal{background:var(--cream)}.journal-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:11%;align-items:end}.journal h2{font:400 clamp(3rem,5vw,5.1rem)/.93 var(--serif);letter-spacing:-.06em;margin:0 0 24px}.journal-main img{width:100%;height:510px;object-fit:cover;display:block;filter:saturate(.75)}.journal-main h3{font:400 2.2rem/.98 var(--serif);letter-spacing:-.045em;margin:20px 0 0}.journal-list{border-top:1px solid var(--line)}.journal-item{display:grid;grid-template-columns:82px 1fr 28px;align-items:center;gap:14px;padding:24px 0;border-bottom:1px solid var(--line);transition:.25s}.journal-item:hover{padding-left:12px;background:#eee9dd}.journal-item small{font:10px var(--mono);letter-spacing:.1em;color:var(--moss)}.journal-item h4{font:400 1.3rem/1 var(--serif);letter-spacing:-.03em;margin:0}.journal-item b{font-size:22px;font-weight:400}
-    .footer{background:#0d1c17;color:#e8e6dc;padding:74px 4.8% 28px}.footer-top{display:grid;grid-template-columns:1.15fr 1fr;gap:10%;padding-bottom:90px}.footer h2{font:400 clamp(2.8rem,5vw,5.7rem)/.9 var(--serif);letter-spacing:-.06em;margin:15px 0 0}.footer-cta{align-self:end}.footer-cta p{max-width:350px;color:#bfc9bc;line-height:1.5;font-size:15px}.footer .round-link{margin-top:25px}.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:23px;border-top:1px solid rgba(255,255,255,.17);font:10px var(--mono);letter-spacing:.09em;text-transform:uppercase;color:#a4b0a7}.footer-links{display:flex;gap:24px}
-    .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:none}
-    @media(max-width:900px){.nav-links{display:none}.hero{padding-bottom:48px}.hero-bottom{align-items:start}.cards{grid-template-columns:repeat(2,1fr)}.card:nth-child(2),.card:nth-child(4){margin-top:0}.card{height:440px}.intro,.journal-grid,.footer-top{grid-template-columns:1fr;gap:38px}.section-label{max-width:140px}.journal-main img{height:390px}section{padding:86px 5%}}
-    @media(max-width:560px){.nav{padding:19px 5%}.nav-cta{padding:8px 10px;font-size:9px}.hero h1{font-size:4rem}.hero-bottom{flex-direction:column}.round-link{width:82px;height:82px}.heading-row{display:block;margin-bottom:36px}.heading-row p{margin-top:20px}.cards{grid-template-columns:1fr}.card{height:440px}.statement{min-height:600px}.statement-inner{padding:25px}.footer-bottom{display:block;line-height:2}.footer-links{margin-top:10px}}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bilvaya Hospitality | Places to stay, gather, and belong</title>
+<meta name="description" content="Bilvaya Hospitality curates resorts, cafes, student residences, and restaurants across India, spaces designed for warmth, craft, and quiet confidence.">
+<meta property="og:title" content="Bilvaya Hospitality">
+<meta property="og:description" content="Resorts, cafes, student residences, and restaurants, designed for warmth, craft, and quiet confidence.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="./base.css">
+<link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <header class="nav" id="nav">
-    <a class="brand" href="#top" aria-label="Bilvaya Hospitality home"><span class="mark" aria-hidden="true"></span>Bilvaya</a>
-    <nav class="nav-links" aria-label="Main navigation"><a href="#places">Our Places</a><a href="#philosophy">Philosophy</a><a href="#stories">Stories</a></nav>
-    <a class="nav-cta" href="#begin">Begin a conversation</a>
-  </header>
 
-  <main id="top">
-    <section class="hero" aria-label="Bilvaya Hospitality introduction">
-      <div class="hero-art" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <div class="eyebrow">Bilvaya Hospitality · India</div>
-        <h1>Places with<br>presence.</h1>
-        <div class="hero-bottom">
-          <p>We create distinctive stays, flavours and communities that turn everyday moments into lasting memories.</p>
-          <a href="#places" class="round-link">Explore<br>our world ↓</a>
-        </div>
-      </div>
-    </section>
+<a class="sr-only" href="#main">Skip to content</a>
 
-    <div class="marquee" aria-hidden="true"><div class="marquee-track">Hotels <i>✦</i> Resorts <i>✦</i> Restaurants <i>✦</i> Cafés <i>✦</i> Student Residences <i>✦</i> Hotels <i>✦</i> Resorts <i>✦</i> Restaurants <i>✦</i> Cafés <i>✦</i> Student Residences <i>✦</i></div></div>
-
-    <section class="intro reveal" id="philosophy">
-      <div class="section-label">01 — Our point of view</div>
-      <div>
-        <h2>Hospitality is not a service. It is a feeling you take with you.</h2>
-        <p class="intro-text">Bilvaya brings together the calm of thoughtful design, the generosity of Indian welcome and the energy of places made for real life. Every address is rooted in its setting and alive to its people.</p>
-        <a class="text-link" href="#stories">Discover our approach <span>→</span></a>
-      </div>
-    </section>
-
-    <section class="destinations" id="places">
-      <div class="heading-row reveal"><h2>A world,<br>well hosted.</h2><p>Five expressions of one belief: the best spaces make room for people to become more themselves.</p></div>
-      <div class="cards">
-        <article class="card reveal"><img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=85" alt="Luxury hotel interior" loading="lazy"><div class="card-content"><span class="card-num">01 / 05</span><h3>Hotels</h3><p>Urban sanctuaries with a precise sense of place.</p></div></article>
-        <article class="card reveal"><img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=85" alt="Resort pool and landscape" loading="lazy"><div class="card-content"><span class="card-num">02 / 05</span><h3>Resorts</h3><p>Unhurried escapes shaped by the landscape.</p></div></article>
-        <article class="card reveal"><img src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=85" alt="Elegant restaurant dining room" loading="lazy"><div class="card-content"><span class="card-num">03 / 05</span><h3>Restaurants</h3><p>Tables where good taste begins with good company.</p></div></article>
-        <article class="card reveal"><img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=900&q=85" alt="Warm cafe space" loading="lazy"><div class="card-content"><span class="card-num">04 / 05</span><h3>Cafés</h3><p>Daily rituals, beautifully observed.</p></div></article>
-      </div>
-    </section>
-
-    <section class="statement" id="stories">
-      <div class="statement-inner reveal"><div class="eyebrow">The Bilvaya Standard</div><h2>Made with care.<br>Felt in detail.</h2><p>From a perfectly timed welcome to a room that lets you exhale, we design with attention to the things that often go unseen—and always remembered.</p></div>
-    </section>
-
-    <section class="journal">
-      <div class="journal-grid">
-        <div class="journal-main reveal"><div class="section-label">05 — The Bilvaya Journal</div><h2>Living well,<br>wherever you are.</h2><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=85" alt="Contemporary shared study and living space" loading="lazy"><h3>Student residences, reimagined for belonging.</h3></div>
-        <div class="journal-list reveal">
-          <a href="#begin" class="journal-item"><small>Perspective</small><h4>Designing spaces that restore attention</h4><b>→</b></a>
-          <a href="#begin" class="journal-item"><small>Culture</small><h4>Why the welcome is an art form</h4><b>→</b></a>
-          <a href="#begin" class="journal-item"><small>Food</small><h4>The social pleasure of a table well set</h4><b>→</b></a>
-          <a href="#begin" class="journal-item"><small>Living</small><h4>A better rhythm for student life</h4><b>→</b></a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer" id="begin">
-    <div class="footer-top">
-      <div><div class="eyebrow">Bilvaya Hospitality</div><h2>Let’s make<br>room for more.</h2></div>
-      <div class="footer-cta"><p>For partnerships, projects and ideas that deserve a memorable address, begin here.</p><a href="#top" class="round-link">Start<br>something ↑</a></div>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="./index.html" aria-label="Bilvaya Hospitality, home">
+      <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <path d="M20 4 C 12 10, 8 18, 20 36 C 32 18, 28 10, 20 4 Z" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M20 8 L 20 34" stroke="currentColor" stroke-width="1"/>
+        <path d="M20 16 C 16 17, 14 19, 13 22" stroke="currentColor" stroke-width="1"/>
+        <path d="M20 16 C 24 17, 26 19, 27 22" stroke="currentColor" stroke-width="1"/>
+        <path d="M20 24 C 17 24, 15 26, 14 28" stroke="currentColor" stroke-width="1"/>
+        <path d="M20 24 C 23 24, 25 26, 26 28" stroke="currentColor" stroke-width="1"/>
+      </svg>
+      <span class="brand-name">Bilvaya <em>Hospitality</em></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="./index.html" class="is-active">Home</a>
+      <a href="./portfolio.html">Portfolio</a>
+      <a href="./about.html">About</a>
+      <a href="./journal.html">Journal</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" data-theme-toggle type="button" aria-label="Toggle theme"></button>
+      <a class="btn btn-primary" href="./contact.html">Get in touch</a>
+      <button class="icon-btn menu-btn" data-menu-open type="button" aria-label="Open menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      </button>
     </div>
-    <div class="footer-bottom"><span>© 2026 Bilvaya Hospitality</span><div class="footer-links"><a href="#top">Instagram</a><a href="#top">LinkedIn</a><a href="#top">Privacy</a></div></div>
-  </footer>
+  </div>
+</header>
 
-  <script>
-    const nav=document.getElementById('nav');
-    addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>45));
-    const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-  </script>
+<div class="mobile-nav" role="dialog" aria-label="Site menu">
+  <div class="mobile-nav-header">
+    <span class="brand-name">Bilvaya</span>
+    <button class="icon-btn" data-menu-close type="button" aria-label="Close menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <ul>
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./portfolio.html">Portfolio</a></li>
+    <li><a href="./about.html">About</a></li>
+    <li><a href="./journal.html">Journal</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+  </ul>
+</div>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-media">
+      <img src="./assets/hero-resort.png" alt="A hilltop resort infinity pool overlooking a coastal valley at dawn" loading="eager" fetchpriority="high">
+    </div>
+    <div class="container">
+      <span class="eyebrow hero-eyebrow">Bilvaya Hospitality</span>
+      <h1 id="hero-title">Places to <em>stay</em>, gather, and belong.</h1>
+      <p class="hero-lede">A quiet family of resorts, cafes, student residences, and restaurants, built on considered design, honest ingredients, and generous service.</p>
+      <div class="hero-actions">
+        <a href="./portfolio.html" class="btn btn-primary">Explore our portfolio</a>
+        <a href="./about.html" class="btn btn-ghost">Our philosophy</a>
+      </div>
+    </div>
+    <div class="hero-marquee" aria-hidden="true">
+      <div class="container">
+        <span>Est. 2016</span>
+        <span>14 Properties</span>
+        <span>4 Verticals</span>
+        <span>7 Cities</span>
+        <span>India</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="verticals" aria-labelledby="verticals-title">
+    <div class="container">
+      <div class="section-intro reveal">
+        <div>
+          <span class="eyebrow">What we do</span>
+          <h2 id="verticals-title">Four disciplines. <em>One quiet standard.</em></h2>
+        </div>
+        <p>We conceive, design, and operate hospitality in four adjacent worlds, each shaped by the same belief that hospitality is a craft, not a category. From coastal resorts to neighbourhood cafes, every project begins with the guest and ends with the detail.</p>
+      </div>
+
+      <div class="verticals">
+        <a class="vertical reveal" href="./portfolio.html#resorts">
+          <div class="vertical-img"><img src="./assets/hero-resort.png" alt="Resort pool at sunset" loading="lazy"></div>
+          <div class="vertical-body">
+            <span class="vertical-index">01 · Resorts</span>
+            <h3>Resorts &amp; Retreats</h3>
+            <p>Boutique properties in landscapes worth arriving for. Considered architecture, generous verandahs, quiet mornings.</p>
+            <span class="vertical-cta">Discover <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <a class="vertical reveal" href="./portfolio.html#cafes">
+          <div class="vertical-img"><img src="./assets/cafe.png" alt="Warm cafe interior with a terracotta espresso machine" loading="lazy"></div>
+          <div class="vertical-body">
+            <span class="vertical-index">02 · Cafes</span>
+            <h3>Cafes &amp; Bakeries</h3>
+            <p>Neighbourhood rooms built around specialty coffee, slow-fermented bread, and the small ceremony of a good pour.</p>
+            <span class="vertical-cta">Discover <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <a class="vertical reveal" href="./portfolio.html#residences">
+          <div class="vertical-img"><img src="./assets/residence.png" alt="Student residence common room with warm light" loading="lazy"></div>
+          <div class="vertical-body">
+            <span class="vertical-index">03 · Residences</span>
+            <h3>Student Residences</h3>
+            <p>Purpose-built homes for students, safe, social, and dignified. Housekeeping, meals, and community, done properly.</p>
+            <span class="vertical-cta">Discover <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+        <a class="vertical reveal" href="./portfolio.html#restaurants">
+          <div class="vertical-img"><img src="./assets/restaurant.png" alt="Warm chef counter at dusk" loading="lazy"></div>
+          <div class="vertical-body">
+            <span class="vertical-index">04 · Restaurants</span>
+            <h3>Restaurants &amp; Bars</h3>
+            <p>Rooms with a point of view. Chef-led kitchens, seasonal menus, and a bar that pours with intention.</p>
+            <span class="vertical-cta">Discover <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="craft-title">
+    <div class="container">
+      <div class="split">
+        <div class="split-media reveal">
+          <img src="./assets/craft.png" alt="A chef plating a dish by hand">
+        </div>
+        <div class="split-content reveal">
+          <span class="eyebrow">The craft</span>
+          <h2 id="craft-title">Service is the <em>slowest</em> discipline.</h2>
+          <p>Great hospitality is rarely loud. It is the temperature of the room. The weight of the door handle. The waiter who remembers the second visit. Across every Bilvaya property, we hire and train for the parts that a spreadsheet cannot measure, because that is where the guest actually lives.</p>
+          <p>Our operating teams work alongside our design studio from the first sketch, so that architecture, menu, uniform, and playlist all speak the same language.</p>
+          <a href="./about.html" class="btn btn-arrow">How we work <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        </div>
+      </div>
+
+      <hr class="divider" aria-hidden="true">
+
+      <div class="principles">
+        <div class="principle reveal">
+          <span class="principle-num">01</span>
+          <h4>Site first</h4>
+          <p>The land, the neighbourhood, the local craft: every brief begins with a long look before a single line is drawn.</p>
+        </div>
+        <div class="principle reveal">
+          <span class="principle-num">02</span>
+          <h4>Honest materials</h4>
+          <p>Stone, lime, wood, linen, brass. We choose materials that age with grace rather than finishes that hide behind maintenance.</p>
+        </div>
+        <div class="principle reveal">
+          <span class="principle-num">03</span>
+          <h4>Operated by us</h4>
+          <p>We do not licence a name and walk away. Every property is run by our own teams, held to the same standard, every shift.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bleed" aria-label="Philosophy">
+    <div class="container">
+      <blockquote class="reveal">
+        A room is only as good as the smallest thing you did not have to notice.
+        <cite>The Bilvaya operating brief, 2016</cite>
+      </blockquote>
+    </div>
+  </section>
+
+
+  <section aria-label="Get in touch">
+    <div class="container">
+      <div class="cta-band reveal">
+        <div>
+          <span class="eyebrow" style="color:rgba(245,241,232,.78)">Work with us</span>
+          <h2>Bring us your land, your <em>lease</em>, or your idea.</h2>
+          <p>We partner with landowners, developers, and institutions on new hospitality projects, from single-room cafes to hundred-key resorts. Timelines are long, standards are firm, and we would love to hear from you.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="./contact.html" class="btn btn-primary">Start a conversation</a>
+          <a href="./about.html" class="btn btn-ghost">Read our approach</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="./index.html" aria-label="Bilvaya Hospitality, home">
+          <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 4 C 12 10, 8 18, 20 36 C 32 18, 28 10, 20 4 Z" stroke="currentColor" stroke-width="1.4"/>
+            <path d="M20 8 L 20 34" stroke="currentColor" stroke-width="1"/>
+            <path d="M20 16 C 16 17, 14 19, 13 22" stroke="currentColor" stroke-width="1"/>
+            <path d="M20 16 C 24 17, 26 19, 27 22" stroke="currentColor" stroke-width="1"/>
+          </svg>
+          <span class="brand-name">Bilvaya <em>Hospitality</em></span>
+        </a>
+        <p>Resorts, cafes, student residences, and restaurants, designed and operated with quiet conviction, since 2016.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Portfolio</h5>
+        <ul>
+          <li><a href="./portfolio.html#resorts">Resorts</a></li>
+          <li><a href="./portfolio.html#cafes">Cafes</a></li>
+          <li><a href="./portfolio.html#residences">Student residences</a></li>
+          <li><a href="./portfolio.html#restaurants">Restaurants</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="./about.html">About Bilvaya</a></li>
+          <li><a href="./about.html#team">Leadership</a></li>
+          <li><a href="./journal.html">Journal</a></li>
+          <li><a href="./contact.html#careers">Careers</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Get in touch</h5>
+        <ul>
+          <li><a href="./contact.html">General enquiries</a></li>
+          <li><a href="./contact.html#partner">Partnership</a></li>
+          <li><a href="./contact.html#press">Press</a></li>
+          <li><a href="./contact.html">Reservations</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <span>© 2026 Bilvaya Hospitality Pvt. Ltd. All rights reserved.</span>
+      <span>Bengaluru · Mumbai · Kochi</span>
+    </div>
+  </div>
+</footer>
+
+<script src="./app.js" defer></script>
 </body>
 </html>
