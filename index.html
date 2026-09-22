@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bilvaya Hospitality | Restaurants, Resorts, Hotels, Cafes & Student Residences</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f6efe1;
+    --cream-deep:#eee2c8;
+    --linen:#f1e8d6;
+    --charcoal:#211d19;
+    --charcoal-soft:#4a423a;
+    --champagne:#b8975a;
+    --champagne-deep:#8c6e34;
+    --champagne-light:#e3cf9c;
+    --burgundy:#5c1a1e;
+    --white:#ffffff;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Cormorant Garamond', serif;
+    background:var(--cream);
+    color:var(--charcoal);
+    overflow-x:hidden;
+    position:relative;
+  }
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events:none;
+  }
+  h1,h2,h3,h4{font-family:'Playfair Display', serif; letter-spacing:0.3px; color:var(--charcoal);}
+  .gold-text{ color:var(--champagne-deep); }
+  header{
+    position:fixed; top:0; left:0; right:0; z-index:1000;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:22px 5%; background:transparent;
+    transition:background 0.4s, box-shadow 0.4s, padding 0.4s;
+  }
+  header.scrolled{
+    background:rgba(246,239,225,0.95);
+    backdrop-filter:blur(8px);
+    box-shadow:0 2px 18px rgba(0,0,0,0.06);
+    padding:14px 5%;
+    border-bottom:1px solid var(--cream-deep);
+  }
+  .brand{display:flex; align-items:center;}
+  nav ul{display:flex; gap:36px; list-style:none;}
+  nav a{
+    text-decoration:none; color:var(--white); font-size:0.82rem;
+    letter-spacing:1.4px; position:relative; transition:color 0.3s;
+    text-transform:uppercase; font-family:'Playfair Display', serif; font-weight:500;
+  }
+  header.scrolled nav a{color:var(--charcoal);}
+  nav a:hover{color:var(--champagne-deep);}
+  nav a::after{
+    content:""; position:absolute; left:0; bottom:-8px;
+    width:0%; height:1px; background:var(--champagne); transition:width 0.3s;
+  }
+  nav a:hover::after{width:100%;}
+  .hero{
+    position:relative; min-height:100vh; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center; padding:0 6%;
+    background-image:
+      linear-gradient(180deg, rgba(15,12,9,0.28), rgba(15,12,9,0.58)),
+      url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1800&q=80');
+    background-size:cover; background-position:center; color:var(--white);
+  }
+  .hero-inner{max-width:740px;}
+  .hero h1{
+    font-size:clamp(2.5rem, 5.6vw, 4.8rem); font-weight:700;
+    margin-bottom:20px; color:var(--white); line-height:1.1;
+  }
+  .hero h1 span{color:var(--champagne-light);}
+  .hero p.tagline{
+    font-size:clamp(1.05rem, 1.8vw, 1.35rem); font-style:italic;
+    color:#ece2c9; max-width:580px; margin:0 auto 36px; line-height:1.7;
+  }
+  .cta-btn{
+    display:inline-block; padding:15px 42px; font-family:'Playfair Display', serif;
+    font-size:0.88rem; letter-spacing:2.4px; text-transform:uppercase;
+    color:var(--white); background:transparent; border:1px solid var(--champagne-light);
+    border-radius:1px; text-decoration:none; cursor:pointer;
+    transition:background 0.4s, color 0.4s;
+  }
+  .cta-btn:hover{ background:var(--champagne-light); color:var(--charcoal); }
+  .divider{
+    height:1px; width:56%; max-width:420px; margin:0 auto;
+    background:linear-gradient(90deg, transparent, var(--champagne), transparent);
+  }
+  section{padding:100px 6%; max-width:1240px; margin:0 auto;}
+  .section-title{text-align:center; font-size:clamp(2rem, 3.6vw, 2.7rem); margin-bottom:12px;}
+  .section-sub{
+    text-align:center; font-style:italic; color:var(--charcoal-soft);
+    max-width:660px; margin:0 auto 60px; font-size:1.1rem; line-height:1.75;
+  }
+  .about-content{display:flex; gap:60px; align-items:center; flex-wrap:wrap;}
+  .about-text{flex:1 1 420px; font-size:1.1rem; line-height:1.9;}
+  .about-text p{margin-bottom:18px;}
+  .about-image{
+    flex:1 1 420px; height:460px; border-radius:2px; overflow:hidden;
+    box-shadow:0 22px 48px rgba(33,29,25,0.14); border:1px solid var(--cream-deep);
+  }
+  .about-image img{width:100%; height:100%; object-fit:cover; display:block;}
+  .services-grid{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:28px;
+  }
+  .service-card{
+    position:relative; height:380px; border-radius:2px; overflow:hidden;
+    box-shadow:0 14px 32px rgba(33,29,25,0.12);
+  }
+  .service-card img{
+    width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease; filter:saturate(0.92);
+  }
+  .service-card:hover img{transform:scale(1.06);}
+  .service-overlay{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(15,12,9,0.02) 45%, rgba(15,12,9,0.82) 100%);
+    display:flex; flex-direction:column; justify-content:flex-end; padding:28px 24px;
+  }
+  .service-overlay .card-line{ height:1px; width:34px; margin-bottom:14px; background:var(--champagne-light); }
+  .service-overlay h3{color:var(--white); font-size:1.35rem; margin-bottom:8px; font-weight:600;}
+  .service-overlay p{color:#e2d8bf; font-size:0.96rem; line-height:1.6;}
+  .strip{
+    position:relative; padding:110px 6%; text-align:center;
+    background:var(--charcoal); color:var(--white);
+  }
+  .strip blockquote{
+    font-family:'Playfair Display', serif; font-style:italic;
+    font-size:clamp(1.3rem, 2.6vw, 1.9rem); max-width:780px; margin:0 auto;
+    color:var(--champagne-light); line-height:1.65;
+  }
+  .strip cite{
+    display:block; margin-top:20px; font-size:0.88rem; color:var(--champagne);
+    font-style:normal; letter-spacing:2px; text-transform:uppercase;
+  }
+  .contact-box{
+    max-width:600px; margin:0 auto; text-align:center; padding:56px 40px;
+    border:1px solid var(--cream-deep); border-radius:2px; background:var(--white);
+    box-shadow:0 20px 46px rgba(184,151,90,0.1);
+  }
+  .contact-box p{font-size:1.08rem; line-height:1.8; margin-bottom:26px; color:var(--charcoal-soft);}
+  .mail-link{
+    display:inline-block; font-family:'Playfair Display', serif; font-size:1.4rem;
+    color:var(--burgundy); text-decoration:none; border-bottom:1px solid var(--champagne);
+    padding-bottom:6px; transition:color 0.3s, border-color 0.3s;
+  }
+  .mail-link:hover{color:var(--champagne-deep);}
+  footer{
+    text-align:center; padding:36px 6% 28px; border-top:1px solid var(--cream-deep); background:var(--cream);
+  }
+  footer p{font-size:0.92rem; color:var(--champagne-deep); letter-spacing:0.8px;}
+  @media (max-width:780px){
+    nav ul{display:none;}
+    .about-content{flex-direction:column;}
+    .about-image{width:100%; height:320px;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="brand">
+    <svg width="44" height="44" viewBox="0 0 120 120" aria-label="Bilvaya trefoil emblem">
+      <defs>
+        <linearGradient id="champGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#8c6e34"/>
+          <stop offset="50%" stop-color="#e3cf9c"/>
+          <stop offset="100%" stop-color="#b8975a"/>
+        </linearGradient>
+      </defs>
+      <circle cx="60" cy="60" r="52" fill="none" stroke="url(#champGrad)" stroke-width="1.2"/>
+      <g fill="none" stroke="url(#champGrad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M60 30 C48 30 40 40 40 52 C40 64 50 70 60 70 C70 70 80 64 80 52 C80 40 72 30 60 30 Z"/>
+        <path d="M60 70 C50 74 42 84 44 92" />
+        <path d="M60 70 C70 74 78 84 76 92" />
+        <path d="M60 70 L60 96" />
+      </g>
+      <circle cx="60" cy="52" r="5" fill="url(#champGrad)"/>
+    </svg>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <h1>Bilvaya <span>Hospitality</span></h1>
+    <p class="tagline">Where regal tradition meets timeless comfort, crafted across restaurants, resorts, hotels, cafes, and student residences.</p>
+    <a href="#services" class="cta-btn">Explore Our World</a>
+  </div>
+</section>
+
+<div class="divider" style="margin-top:70px;"></div>
+
+<section id="about">
+  <h2 class="section-title gold-text">Our Legacy</h2>
+  <p class="section-sub">Bilvaya draws its name from the sacred Bilva, whose trefoil leaf symbolises prosperity, strength, and grace, values we weave into every space we create.</p>
+  <div class="about-content">
+    <div class="about-text">
+      <p>Bilvaya Hospitality is a house of experiences built on the pillars of warmth, craftsmanship, and quiet grandeur. From the aroma of a slow-cooked meal at our restaurants to the calm of a sunset at our resorts, every detail is composed with intent.</p>
+      <p>We curate hotels that feel like heritage homes, cafes that invite unhurried conversation, and student residences that offer the discipline of a home away from home, safe, dignified, and thoughtfully managed.</p>
+      <p>Our philosophy is simple: luxury is not loud. It is felt in the texture of fine linen, the hush of a well kept room, and the sincerity of service.</p>
+    </div>
+    <div class="about-image">
+      <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80" alt="Bilvaya Hospitality interior">
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="services">
+  <h2 class="section-title gold-text">Our Offerings</h2>
+  <p class="section-sub">Five distinct worlds, one standard of quiet hospitality.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Bilvaya Restaurants">
+      <div class="service-overlay">
+        <div class="card-line"></div>
+        <h3>Restaurants</h3>
+        <p>Fine dining rooms serving refined regional and global cuisine in settings dressed with warmth and quiet detail.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=900&q=80" alt="Bilvaya Resorts">
+      <div class="service-overlay">
+        <div class="card-line"></div>
+        <h3>Resorts</h3>
+        <p>Secluded retreats where landscape and luxury meet, designed for rest, celebration, and rejuvenation.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=80" alt="Bilvaya Hotels">
+      <div class="service-overlay">
+        <div class="card-line"></div>
+        <h3>Hotels</h3>
+        <p>Heritage inspired stays across destinations, blending contemporary comfort with old world elegance.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=80" alt="Bilvaya Cafes">
+      <div class="service-overlay">
+        <div class="card-line"></div>
+        <h3>Cafes</h3>
+        <p>Intimate corners for coffee, conversation, and quiet moments, styled with warmth and understated detail.</p>
+      </div>
+    </div>
+    <div class="service-card">
+      <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=900&q=80" alt="Bilvaya Student Residences">
+      <div class="service-overlay">
+        <div class="card-line"></div>
+        <h3>Student Residences</h3>
+        <p>Secure, well managed residences for students that combine discipline, comfort, and a genuine sense of home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" id="philosophy">
+  <blockquote>
+    "True luxury is not what is shown, it is what is felt in every quiet, considered detail."
+    <cite>Bilvaya Hospitality</cite>
+  </blockquote>
+</div>
+
+<section id="contact">
+  <h2 class="section-title gold-text">Contact Us</h2>
+  <p class="section-sub">For partnerships, enquiries, and reservations, write to us directly.</p>
+  <div class="contact-box">
+    <p>We would be glad to hear from you. Reach out for collaborations across our restaurants, resorts, hotels, cafes, and student residences.</p>
+    <a class="mail-link" href="mailto:Gk@Bilvaya.com">Gk@Bilvaya.com</a>
+  </div>
+</section>
+
+<footer>
+  <p>Crafted with love in India.</p>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 60){
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>
